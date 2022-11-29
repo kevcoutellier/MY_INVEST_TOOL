@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row"><h1>Immobilier</h1>
+    <ul>
+      <% @real_estates.each do |real_estate| %>
+        <li><%= link_to real_estate.address, real_estate_path(real_estate) %></li>
+      <%end %>
+    </ul>
+<%= link_to "Ajoutez un bien", new_real_estate_path%>
+<%# <%= link_to  "Modifiez", edit_real_estate_path(@real_estate)%>
+  </div>
+</div>
