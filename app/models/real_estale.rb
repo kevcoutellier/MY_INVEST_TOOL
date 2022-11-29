@@ -1,0 +1,2 @@
+class RealEstale < ApplicationRecord
+end
