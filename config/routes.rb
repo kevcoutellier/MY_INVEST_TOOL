@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: "pages#dashboard"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get 'wallet', to: "pages#wallet"
+  resources :pages, only: [:index]
+  resources :cryptos, only: [:new, :index, :destroy, :edit]
+  resources :bank_accounts, only: [:new, :index, :destroy, :edit]
+  resources :real_estates, only: [:new, :index, :destroy, :edit]
+  resources :custom_invests, only: [:new, :index, :destroy, :edit]
+  resources :liabilities, only: [:new, :index, :destroy, :edit]
+
 end
