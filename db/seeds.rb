@@ -1,12 +1,10 @@
-
 require "open-uri"
 puts 'Seed: Deleting existing records...'
 
-
-
-User.destroy_all
-CustomInvest.destroy_all
 RealEstate.destroy_all
+CustomInvest.destroy_all
+User.destroy_all
+
 
 
 user = User.create!(email: "ted@my_invest.fr", password: "password", owner: false)
@@ -52,11 +50,12 @@ real_estate2 = RealEstate.new(
   floor_space: 100,
   year_of_construction: Date.new(2010, 11, 17),
   date_of_purchase: Date.new(2019, 12, 12),
-  user: user2
+  user: user1
 )
 real_estate2.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
 real_estate2.save
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669801299/my_invest/t%C3%A9l%C3%A9chargement_3_stjfjt.jpg")
+
 real_estate3 = RealEstate.new(
   address: "36 avenue Beau site, Nice",
   description: "Location à l'année",
@@ -66,8 +65,9 @@ real_estate3 = RealEstate.new(
   floor_space: 50,
   year_of_construction: Date.new(1999, 11, 23),
   date_of_purchase: Date.new(2010, 11, 16),
-  user: user3
+  user: user2
 )
 real_estate3.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
 real_estate3.save
 
+puts 'Seed: Finished seeding!'
