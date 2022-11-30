@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <%= simple_form_for(@crypto) do |f| %>
+    <%= f.input :name, label:"Name"  %>
+    <%= f.input :wallet_address, label:"Wallet address" %>
+    <%= f.submit "Ajouter une crypto", class:"btn-form" %>
+    <% end %>
+  </div>
+</div>
