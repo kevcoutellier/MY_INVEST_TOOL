@@ -10,4 +10,5 @@ class RealEstate < ApplicationRecord
   validates :floor_space, presence: true
   validates :year_of_construction, presence: true
   validates :date_of_purchase, presence: true
+  has_one_attached :photo
 end
