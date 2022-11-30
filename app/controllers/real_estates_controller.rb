@@ -11,7 +11,6 @@ class RealEstatesController < ApplicationController
   def show
   end
 
-
   def create
     @real_estate = RealEstate.new(real_estate_params)
     @real_estate.user = current_user
@@ -45,6 +44,6 @@ class RealEstatesController < ApplicationController
   end
 
   def real_estate_params
-    params.require(:real_estate).permit(:address, :description, :type_of, :category, :purchase_price, :floor_space, :year_of_construction, :date_of_purchase )
+    params.require(:real_estate).permit(:address, :description, :type_of, :category, :purchase_price, :floor_space, :year_of_construction, :date_of_purchase, :photo)
   end
 end
