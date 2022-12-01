@@ -2,3 +2,6 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
+import { navbar } from "./components/navbar"
+
+navbar();

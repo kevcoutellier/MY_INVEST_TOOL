@@ -1,22 +1,31 @@
+<div class="bandeau"><marquee>
+  <a href="https://www.blockchain.com/prices/BTC" target="_self" rel="" style="display: contents; color: inherit; text-decoration: inherit;"><div class="sc-49e472fc-0 fJYBpI"><span class="sc-49e472fc-1 bhUia-D">Bitcoin/USD</span><span class="sc-49e472fc-2 ginful">16 825,09</span><div class="sc-49e472fc-3 jxwzmA"><div src="/explorer/_next/static/media/triangle.b0bc9bd9.svg" class="sc-49e472fc-4 gxAWpN"></div>2,87%</div></div></a>
+  <a href="https://www.blockchain.com/prices/ETH" target="_self" rel="" style="display: contents; color: inherit; text-decoration: inherit;"><div class="sc-49e472fc-0 fJYBpI"><span class="sc-49e472fc-1 bhUia-D">Ethereum/USD</span><span class="sc-49e472fc-2 ginful">1 264,12</span><div class="sc-49e472fc-3 jxwzmA"><div src="/explorer/_next/static/media/triangle.b0bc9bd9.svg" class="sc-49e472fc-4 gxAWpN"></div>4,91%</div></div></a>
+  <a href="https://www.blockchain.com/prices/USDT" target="_self" rel="" style="display: contents; color: inherit; text-decoration: inherit;"><div class="sc-49e472fc-0 fJYBpI"><span class="sc-49e472fc-1 bhUia-D">Tether/USD</span><span class="sc-49e472fc-2 ginful">1,00</span><div class="sc-49e472fc-3 jxwzmA"><div src="/explorer/_next/static/media/triangle.b0bc9bd9.svg" class="sc-49e472fc-4 gxAWpN"></div>0,04%</div></div></a>
+  <a href="https://www.blockchain.com/prices/BNB" target="_self" rel="" style="display: contents; color: inherit; text-decoration: inherit;"><div class="sc-49e472fc-0 fJYBpI"><span class="sc-49e472fc-1 bhUia-D">Binance Coin/USD</span><span class="sc-49e472fc-2 ginful">299,01</span><div class="sc-49e472fc-3 pyXvJ"><div src="/explorer/_next/static/media/triangle.b0bc9bd9.svg" class="sc-49e472fc-4 iaejtw"></div>0,10%</div></div></a>
+  <a href="https://www.blockchain.com/prices/USDC" target="_self" rel="" style="display: contents; color: inherit; text-decoration: inherit;"><div class="sc-49e472fc-0 fJYBpI"><span class="sc-49e472fc-1 bhUia-D">USD Coin/USD</span><span class="sc-49e472fc-2 ginful">1,00</span><div class="sc-49e472fc-3 idPYf"><div src="/explorer/_next/static/media/triangle.b0bc9bd9.svg" class="sc-49e472fc-4 gxAWpN"></div>0.00%</div></div></a>
+  <a href="https://www.blockchain.com/prices/XRP" target="_self" rel="" style="display: contents; color: inherit; text-decoration: inherit;"><div class="sc-49e472fc-0 fJYBpI"><span class="sc-49e472fc-1 bhUia-D">XRP/USD</span><span class="sc-49e472fc-2 ginful">0,40</span><div class="sc-49e472fc-3 jxwzmA"><div src="/explorer/_next/static/media/triangle.b0bc9bd9.svg" class="sc-49e472fc-4 gxAWpN"></div>2,61%</div></div></a>
+  <a href="https://www.blockchain.com/prices/BUSD" target="_self" rel="" style="display: contents; color: inherit; text-decoration: inherit;"><div class="sc-49e472fc-0 fJYBpI"><span class="sc-49e472fc-1 bhUia-D">BUSD/USD</span><span class="sc-49e472fc-2 ginful">1,00</span><div class="sc-49e472fc-3 idPYf"><div src="/explorer/_next/static/media/triangle.b0bc9bd9.svg" class="sc-49e472fc-4 gxAWpN"></div>0.00%</div></div></a>
+</marquee></div>
+
 <div class="En-tete">
-<h1>My cryptos</h1>
-<p>Amount</p>
+  <h1>My cryptos</h1>
+  <p>Amount</p>
 </div>
 
 <div class="crypto-donut">
-donut
+  donut
 </div>
 <br>
 <div class="crypto-news-feed">
-Crypto news feed
+  Crypto news feed
 </div>
 
 <div class="crypto-index">
-<% @cryptos.each do |crypto| %>
-<div><%= link_to crypto.name, crypto_path(crypto), class: "btn-medium" %></div>
-<%= link_to "add", new_crypto_path(crypto), class: "btn-medium" %>
-<%= link_to "edit", edit_crypto_path(crypto), class: "btn-medium" %>
-<%= link_to 'delete', crypto_path(crypto) , class:"btn-medium", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
-
-<% end %>
+  <% @cryptos.each do |crypto| %>
+    <div><%= link_to crypto.name, crypto_path(crypto), class: "crypto_id" %></div>
+        <%= link_to "add", new_crypto_path(crypto), class: "btn-medium" %>
+        <%= link_to "edit", edit_crypto_path(crypto), class: "btn-medium" %>
+        <%= link_to 'delete', crypto_path(crypto) , class:"btn-medium", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
+  <% end %>
 </div>
