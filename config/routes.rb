@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   resources :pages, only: [:index]
   resources :cryptos, only: [:new, :index, :destroy, :edit, :update, :show]
   resources :bank_accounts, only: [:new, :index, :destroy, :edit]
-  resources :real_estates, only: [:new, :index, :destroy, :edit, :show, :create, :update]
+  resources :real_estates, only: [:new, :index, :destroy, :edit, :show,:create,:update]
   resources :custom_invests, only: [:new, :index, :destroy, :edit]
-  resources :liabilities, only: [:new, :index, :destroy, :edit]
-
+  resources :liabilities, only: [:new, :index, :destroy, :edit, :show, :create,:update]
 end

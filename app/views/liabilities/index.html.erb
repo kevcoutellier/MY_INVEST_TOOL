@@ -1,1 +1,14 @@
-<h1>Mes emprunts</h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="h2 my-3 d-flex justify-content-center">Mes emprunts</h1>
+        <br>
+          <ul>
+              <% @liabilities.each do |liability| %>
+              <li><%= link_to liability.loan_name, liability_path(liability) %></li>
+              <%end %>
+          </ul>
+              <%= link_to "Ajouter mes emprunts", new_liability_path%>
+      </div>
+  </div>
+</div>
