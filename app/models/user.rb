@@ -3,9 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :cryptos
-  has_many :real_estates
-  has_many :custom_invests
-  has_many :bank_accounts
-  has_many :liabilities
+  has_many :cryptos, dependent: :destroy
+  has_many :real_estates, dependent: :destroy
+  has_many :custom_invests, dependent: :destroy
+  has_many :bank_accounts, dependent: :destroy
+  has_many :liabilities, dependent: :destroy
 end
