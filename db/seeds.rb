@@ -28,7 +28,7 @@ user2 = User.create!(email: "dia@my_invest.fr", password: "password", owner: fal
 
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669801293/my_invest/appartement-photo_cavo34.jpg")
 real_estate = RealEstate.new(
-  address: "63 Corniche Bellevue, Nice",
+  address: "3059 Grand Ave Suite 340, Coconut Grove, FL 33133, États-Unis",
   description: "Chez moi",
   type_of: "Maison",
   category: "Résidence principale",
@@ -42,7 +42,7 @@ real_estate.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg
 real_estate.save
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669801296/my_invest/t%C3%A9l%C3%A9chargement_4_ybxmeu.jpg")
 real_estate2 = RealEstate.new(
-  address: "21 avenue Thiers, Nice",
+  address: "93 Palm Ave, Miami Beach, FL 33139, États-Unis",
   description: "Airbnb le Wagon",
   type_of: "Appartement",
   category: "Résidence secondaire",
@@ -57,7 +57,7 @@ real_estate2.save
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669801299/my_invest/t%C3%A9l%C3%A9chargement_3_stjfjt.jpg")
 
 real_estate3 = RealEstate.new(
-  address: "36 avenue Beau site, Nice",
+  address: "1300 Brickell Bay Dr Suite 100, Miami, FL 33131, États-Unis",
   description: "Location à l'année",
   type_of: "Appartement",
   category: "Bien locatif",

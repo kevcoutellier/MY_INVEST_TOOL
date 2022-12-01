@@ -1,0 +1,9 @@
+<h1>Détail de mes imprunts</h1>
+<p>Nom de l'emprunt: <%= @liability.loan_name %></p>
+<p>Type: <%= @liability.type_of %></p>
+<p>Montant emprunté: <%= @liability.amount %>€</p>
+<p>Mensualité: <%= @liability.monthly_payment %>€</p>
+<p>Taux d'intérêt: <%= @liability.interest_rate %>%</p>
+<p>Date début emprunt: <%= @liability.start_date %></p>
+<p>Durée totale de l'emprunt: <%= @liability.duration %> mois</p>
+<%= link_to 'Supprimer', liability_path(@liability), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer cet emprunt ?" }  %>

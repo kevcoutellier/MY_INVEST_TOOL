@@ -75,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_132423) do
 
   create_table "liabilities", force: :cascade do |t|
     t.string "loan_name"
-    t.string "type"
+    t.string "type_of"
     t.integer "amount"
     t.integer "monthly_payment"
     t.integer "interest_rate"
