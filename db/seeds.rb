@@ -4,6 +4,7 @@ puts 'Seed: Deleting existing records...'
 RealEstate.destroy_all
 CustomInvest.destroy_all
 User.destroy_all
+BankAccount.destroy_all
 
 
 
@@ -69,5 +70,60 @@ real_estate3 = RealEstate.new(
 )
 real_estate3.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
 real_estate3.save
+
+
+bank_account = BankAccount.create!(
+  bank: "BNP Paribas",
+  account_number: "FR3530003000704398932537S50",
+  type_of: "Compte courant",
+  balance: 13_531,
+  currency: "EUR",
+  user: user
+)
+
+bank_account2 = BankAccount.create!(
+  bank: "BNP Paribas",
+  account_number: "FR5010096000706258456462I21",
+  type_of: "Compte d'épargne(Livret)",
+  balance: 8767,
+  currency: "EUR",
+  user: user
+)
+
+  bank_account3 = BankAccount.create!(
+    bank: "Société Générale",
+    account_number: "FR4217569000301711585427S64",
+    type_of: "Compte courant",
+    balance: 14_265,
+    currency: "EUR",
+    user: user1
+  )
+
+  bank_account4 = BankAccount.create!(
+    bank: "Société Générale",
+    account_number: "FR4217569000301711585427S64",
+    type_of: "Compte d'épargne(Livret)",
+    balance: 2500,
+    currency: "EUR",
+    user: user1
+  )
+
+  bank_account5 = BankAccount.create!(
+    bank: "Crédit Mutuel",
+    account_number: "FR2510096000403743519222V21",
+    type_of: "Compte courant",
+    balance: 8500,
+    currency: "EUR",
+    user: user2
+  )
+
+  bank_account6 = BankAccount.create!(
+    bank: "Crédit Mutuel",
+    account_number: "FR2510096000403743519222V21",
+    type_of: "Compte d'épargne(Livret)",
+    balance: 10_500,
+    currency: "EUR",
+    user: user2
+  )
 
 puts 'Seed: Finished seeding!'
