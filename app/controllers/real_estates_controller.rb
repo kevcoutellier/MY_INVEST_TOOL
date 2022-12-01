@@ -2,6 +2,13 @@ class RealEstatesController < ApplicationController
   before_action :set_real_estate, only: [ :show, :edit, :update, :destroy ]
   def index
     @real_estates = RealEstate.all
+    @markers = @real_estates.geocoded.map do |real_estate|
+      {
+        lat: real_estate.latitude,
+        lng: real_estate.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { real_estate: real_estate })
+      }
+    end
   end
 
   def new

@@ -1,0 +1,22 @@
+<div class="En-tete">
+<h1>My cryptos</h1>
+<p>Amount</p>
+</div>
+
+<div class="crypto-donut">
+donut
+</div>
+<br>
+<div class="crypto-news-feed">
+Crypto news feed
+</div>
+
+<div class="crypto-index">
+<% @cryptos.each do |crypto| %>
+<div><%= link_to crypto.name, crypto_path(crypto), class: "btn-medium" %></div>
+<%= link_to "add", new_crypto_path(crypto), class: "btn-medium" %>
+<%= link_to "edit", edit_crypto_path(crypto), class: "btn-medium" %>
+<%= link_to 'delete', crypto_path(crypto) , class:"btn-medium", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
+
+<% end %>
+</div>
