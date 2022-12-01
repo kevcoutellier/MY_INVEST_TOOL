@@ -15,7 +15,10 @@ class RealEstatesController < ApplicationController
     end
   end
   def estimation(address)
-    url = URI("https://realty-mole-property-api.p.rapidapi.com/salePrice?address=#{address.gsub(",","%2C").gsub(" ","%20")}&propertyType=Single%20Family&bedrooms=4&bathrooms=2&squareFootage=1600&compCount=5")
+    encoded_address = address.gsub(",","%2C").gsub(" ","%20").gsub("É","%C3%89")
+
+    # model = "400%20Ocean%20Dr%2C%20Miami%20Beach%2C%20FL%2033139%2C%20%C3%89tats-Unis"
+    url = URI("https://realty-mole-property-api.p.rapidapi.com/salePrice?address=#{encoded_address}&propertyType=Single%20Family&bedrooms=4&bathrooms=2&squareFootage=1600&compCount=5")
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE

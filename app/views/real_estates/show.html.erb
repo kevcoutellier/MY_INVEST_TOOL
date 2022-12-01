@@ -15,7 +15,7 @@
               <%= link_to 'Supprimer', real_estate_path(@real_estate), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ce bien ?" }  %>
               <%= link_to "Immobilier", real_estates_path  %>
         </article>
-        <%= cl_image_tag @real_estate.photo.key, height: 300, width: 400, crop: :fill %>
+         <%= cl_image_tag @real_estate.photo.key, height: 300, width: 400, crop: :fill %>
       </div>
     </div>
 </div>
