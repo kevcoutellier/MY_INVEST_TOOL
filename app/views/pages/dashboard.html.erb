@@ -1,58 +1,58 @@
-<div>
-  <canvas id="myChart"></canvas>
-</div>
+<!--           <a class="mdl-navigation__link" href="">Dashboard</a>
+          <a class="mdl-navigation__link" href="">Cards</a>
+          <a class="mdl-navigation__link" href="">Mailbox</a>
+          <a class="mdl-navigation__link" href="">Layouts</a> -->
+        </nav>
+      </div>
+      <main id="main_content" class="mdl-layout__content">
+        <div class="page-content">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp" id="circlePercet1">
+              <div class="mdl-card__title">
+                <label class="loaderTxt">Monthly Income</label>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <canvas class="loaderP" id="my_canvas1" width="140" height="140"></canvas>
+              </div>
+          </div>
+          <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp" id="circlePercet2">
+              <div class="mdl-card__title">
+                <label class="loaderTxt">Total Income</label>
+              </div>
+              <div class="mdl-card__supporting-text">
+                <canvas class="loaderP" id="my_canvas2" width="140" height="140"></canvas>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp" id="circlePercet3">
+              <div class="PrgsBar">
+                <label class="prgsTxt">Hourly</label>
+                <div class="BgBar">
+                  <div id="HourlyBar"></div>
+                </div>
+              </div>
 
-<div id ="doughnuts" data-value1="15" data-value2=<%=@custom_invest %> >
-</div>
+              <div class="PrgsBar">
+                <label class="prgsTxt">Last  Month</label>
+                <div class="BgBar">
+                  <div id="MonthlyBar"></div>
+                </div>
+              </div>
 
+              <div class="PrgsBar">
+                <label class="prgsTxt">Last Year</label>
+                <div class="BgBar">
+                  <div id="YearlyBar"></div>
+                </div>
+              </div>
+            </div>
+        </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--8-col mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title"><label>Analytics</label></div>
+            </div>
 
-<script>
- const doughnuts = document.getElementById('doughnuts');
-  const ctx = document.getElementById('myChart');
-  console.log(doughnuts.dataset.value2)
+          </div>
+      </main>
 
-
-  new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: ['Bank', 'Crypto', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [doughnuts.dataset.value1,doughnuts.dataset.value2 , 3, 5, 2, 3],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1>Dashboard</h1>
-
-<p>Patrimoine brut</p>
-<p>Patrimoine net</p>
-<p>Patrimoine financier</p>
+    </div>

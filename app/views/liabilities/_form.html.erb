@@ -1,17 +1,11 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <%= simple_form_for(@liability) do |f| %>
-      <%= f.input :loan_name, label:"Nom de l'emprunt", placeholder: "Maison"%>
-      <%= f.input :type_of, collection: Liability::LOAN_TYPE, label:"Type"%>
-      <%= f.input :amount, label:"Montant emprunté", placeholder: "100 000 EUR"%>
-      <%= f.input :monthly_payment, label:"Mensualité", placeholder: "400"%>
-      <%= f.input :interest_rate, label:"Taux d'intérêt", placeholder: "1.3%"%>
-      <%= f.input :start_date, as: :date, start_year: Date.today.year - 30,
-      end_year: Date.today.year, discard_day: true, order: [:month, :year], label:"Date début emprunt" %>
-      <%= f.input :duration, label:"Durée totale de l'emprunt", placeholder: "180 mois" %>
-      <%= f.submit "Valider", class: "btn btn-sm btn-primary btn-block mt-2"%>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%= simple_form_for(@liability) do |f| %>
+<%= f.input :loan_name, label:"Loan name", placeholder: "House"%>
+<%= f.input :type_of, collection: Liability::LOAN_TYPE, label:"Type"%>
+<%= f.input :amount, label:"Total amount", placeholder: "100 000 EUR"%>
+<%= f.input :monthly_payment, label:"Monthly payment", placeholder: "400"%>
+<%= f.input :interest_rate, label:"Interest rate", placeholder: "1.3%"%>
+<%= f.input :start_date, as: :date, start_year: Date.today.year - 30,
+end_year: Date.today.year, discard_day: true, order: [:month, :year], label:"Start date" %>
+ <%= f.input :duration, label:"Duration", placeholder: "180 months" %>
+ <%= f.submit "Submit", class: "btn btn-ghost"%>
+<% end %>

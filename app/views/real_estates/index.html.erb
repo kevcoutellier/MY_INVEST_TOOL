@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1>Immobilier</h1>
+      <h1><center>Real Estate</center></h1>
       <div style="width: 100%; height: 600px;"
           data-controller="map"
           data-map-markers-value="<%= @markers.to_json %>"
@@ -12,10 +12,10 @@
               <% if real_estate.photo.key  %>
               <%= cl_image_tag real_estate.photo.key, height: 300, width: 400, crop: :fill %>
               <% end %>
-              <li><%= link_to real_estate.address, real_estate_path(real_estate) %></li>
+              <li><%= link_to real_estate.address, real_estate_path(real_estate), class: "" %></li>
               <%end %>
           </ul>
-              <%= link_to "Ajoutez un bien", new_real_estate_path%>
+              <%= link_to "Add new", new_real_estate_path, class: "btn btn-ghost"%>
       </div>
   </div>
 </div>

@@ -24,7 +24,7 @@ class RealEstatesController < ApplicationController
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
     request = Net::HTTP::Get.new(url)
-    request["X-RapidAPI-Key"] = ENV["RAPI_API_KEY"]
+    request["X-RapidAPI-Key"] = 'f835ac6c59msh54715db3f512f86p19a480jsnf14aac81f626'
     request["X-RapidAPI-Host"] = 'realty-mole-property-api.p.rapidapi.com'
 
     response = http.request(request)

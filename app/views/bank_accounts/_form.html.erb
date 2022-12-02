@@ -1,8 +1,8 @@
  <%= simple_form_for(@bank_account) do |f| %>
-      <%= f.input :bank, label:"Banque", placeholder: "BNP Paribas"%>
-      <%= f.input :account_number, label: "Numéro de compte", placeholder: "FR2910096000702268451392M94" %>
-      <%= f.input :type_of, label: "Type de compte", collection: BankAccount::TYPES %>
-      <%= f.input :balance, label: "Solde", placeholder: "1000" %>
-      <%= f.input :currency, label: "Devise", collection: BankAccount::CURRENCY %>
-      <%= f.submit "Valider"%>
+      <%= f.input :bank, placeholder: "BNP Paribas"%>
+      <%= f.input :account_number, placeholder: "FR2910096000702268451392M94" %>
+      <%= f.input :type_of, collection: BankAccount::TYPES %>
+      <%= f.input :balance, placeholder: "1000" %>
+      <%= f.input :currency, collection: BankAccount::CURRENCY %>
+      <%= f.submit "Add", class: "btn btn-ghost"%>
       <% end %>

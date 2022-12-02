@@ -1,9 +1,14 @@
-<h1>Détail de mes imprunts</h1>
-<p>Nom de l'emprunt: <%= @liability.loan_name %></p>
-<p>Type: <%= @liability.type_of %></p>
-<p>Montant emprunté: <%= @liability.amount %>€</p>
-<p>Mensualité: <%= @liability.monthly_payment %>€</p>
-<p>Taux d'intérêt: <%= @liability.interest_rate %>%</p>
-<p>Date début emprunt: <%= @liability.start_date %></p>
-<p>Durée totale de l'emprunt: <%= @liability.duration %> mois</p>
-<%= link_to 'Supprimer', liability_path(@liability), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer cet emprunt ?" }  %>
+<div class="container">
+  <div class="row">
+    <div class="col"><h1>My credits</h1>
+      <p>Loan name: <%= @liability.loan_name %></p>
+      <p>Type: <%= @liability.type_of %></p>
+      <p>Total amount: <%= @liability.amount %>€</p>
+      <p>Monthly payment: <%= @liability.monthly_payment %>€</p>
+      <p>Interest rate: <%= @liability.interest_rate %>%</p>
+      <p>Start date: <%= @liability.start_date %></p>
+      <p>Duration: <%= @liability.duration %> months</p>
+      <%= link_to 'Delete', liability_path(@liability), data: { turbo_method: :delete, turbo_confirm: "Are you sure that you want to delete it ?" }, class: "btn btn-ghost"  %>
+     </div>
+  </div>
+</div>

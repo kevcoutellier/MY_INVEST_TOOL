@@ -1,5 +1,5 @@
 class Liability < ApplicationRecord
-  LOAN_TYPE = ["Prêt amortissable(standard)", "Prêt in fine", "Prêt avec différé partiel", "Prêt avec differé total"]
+  LOAN_TYPE = ["Amortising loan(standard)", "Bullet loan ", "Partial payment delay loan", "Total payment delayloan"]
   belongs_to :user
   validates :loan_name, presence: true
   validates :type_of, presence: true, inclusion: { in: LOAN_TYPE }
