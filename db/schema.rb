@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 2022_11_30_132423) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,6 +48,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_132423) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "bank"
+    t.string "account_number"
+    t.string "type_of"
+    t.integer "balance"
+    t.string "currency"
     t.index ["user_id"], name: "index_bank_accounts_on_user_id"
   end
 
@@ -73,7 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_132423) do
 
   create_table "liabilities", force: :cascade do |t|
     t.string "loan_name"
-    t.string "type"
+    t.string "type_of"
     t.integer "amount"
     t.integer "monthly_payment"
     t.integer "interest_rate"

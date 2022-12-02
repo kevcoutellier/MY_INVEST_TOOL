@@ -4,10 +4,9 @@ Rails.application.routes.draw do
 
   get 'wallet', to: "pages#wallet"
   resources :pages, only: [:index]
-  resources :cryptos, only: [:new, :index, :destroy, :edit, :update, :show]
-  resources :bank_accounts, only: [:new, :index, :destroy, :edit]
+  resources :cryptos
   resources :real_estates
   resources :custom_invests
-  resources :liabilities, only: [:new, :index, :destroy, :edit]
-
+  resources :bank_accounts, only: [:new, :index, :destroy, :create, :show ]
+  resources :liabilities, only: [:new, :index, :destroy, :show, :create]
 end

@@ -1,22 +1,59 @@
-<div class="En-tete">
-<h1>My cryptos</h1>
-<p>Amount</p>
+<marquee>
+  <div class="crypto-news-feed">
+    <% @response.each do |response| %>
+      <p><div><%= response["symbol"] %>=</div>
+      <div><%= response["last"].to_f.round(2) %>$</div>
+      <div>24H%=<%= response["daily_change_percentage"].to_f.round(2) %></div></p>
+    <% end %>
+  </div>
+</marquee>
+
+<div class="en-tete">
+  <h1>My cryptos</h1>
+  <p>Amount</p>
 </div>
 
-<div class="crypto-donut">
-donut
-</div>
-<br>
-<div class="crypto-news-feed">
-Crypto news feed
-</div>
-
-<div class="crypto-index">
-<% @cryptos.each do |crypto| %>
-<div><%= link_to crypto.name, crypto_path(crypto), class: "btn-medium" %></div>
-<%= link_to "add", new_crypto_path(crypto), class: "btn-medium" %>
-<%= link_to "edit", edit_crypto_path(crypto), class: "btn-medium" %>
-<%= link_to 'delete', crypto_path(crypto) , class:"btn-medium", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
-
+<%# CLASSEMENT CRYPTO %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price($usd)</th>
+      <th scope="col">Market Cap</th>
+      <th scope="col">usd_24h_vol</th>
+      <th scope="col">usd_24h_change</th>
+      <th scope="col">last_updated_at</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @crypto_user.keys.each_with_index do |key, index| %>
+    <tr>
+      <th scope="row"><%= index+1 %></th>
+      <td><%= key %> </td>
+      <td> <%= @crypto_user[key]["usd"] %> </td>
+  <td> <%= @crypto_user[key]["usd_market_cap"] %> </td>
+  <td> <%= @crypto_user[key]["usd_24h_vol"] %> </td>
+  <td> <%= @crypto_user[key]["usd_24h_change"] %> </td>
+  <td> <%= @crypto_user[key]["last_updated_at"] %> </td>
+    </tr>
 <% end %>
+  </tbody>
+</table>
+
+<%# DIAGRAMME CRYPTO %>
+<div class="crypto-donut">
+  donut
+</div>
+
+<br>
+
+<%# INDEX CRYPTO %>
+<div class="crypto-index">
+        <%= link_to "add", new_crypto_path, class: "btn-medium" %>
+  <% @cryptos.each do |crypto| %>
+    <div><%= link_to crypto.name, crypto_path(crypto), class: "crypto_id" %></div>
+        <%= link_to "edit", edit_crypto_path(crypto), class: "btn-medium" %>
+        <%= link_to 'delete', crypto_path(crypto) , class:"btn-medium", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
+  <% end %>
 </div>
