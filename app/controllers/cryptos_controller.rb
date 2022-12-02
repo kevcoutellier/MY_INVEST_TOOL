@@ -1,6 +1,4 @@
 class CryptosController < ApplicationController
-  validates :name,:address
-  belongs_to :user
 
   def index
     @cryptos = Crypto.all
