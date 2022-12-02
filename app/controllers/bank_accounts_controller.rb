@@ -10,9 +10,9 @@ class BankAccountsController < ApplicationController
 
 # BANKING API
 
-  url2 = "https://{domain}.biapi.pro/2.0/auth/webview/{lang}/connect"
-        user_serialized = URI.open(url2).read
-          @bank_user = JSON.parse(user_serialized)
+  # url2 = "https://{domain}.biapi.pro/2.0/auth/webview/{lang}/connect"
+  #       user_serialized = URI.open(url2).read
+  #         @bank_user = JSON.parse(user_serialized)
 
 
 
