@@ -1,25 +1,19 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-          <div class="mapboxgl-ctrl-geocoder">
-            <%= simple_form_for [@real_estate] do |f| %>
-            <%= f.input :address,
-            input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-            wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}},
-            label: "Adresse:", placeholder: "Où est situé votre bien ?" %>
-            <%= f.input :description, label: "Description:", placeholder: "La description vous permet de facilement identifier votre bien." %>
-            <%= f.input :type_of, collection: RealEstate::TYPES,label: "Type de bien:" %>
-            <%= f.input :category, collection: RealEstate::CATEGORIES,label:"Catégorie" %>
-            <%= f.input :purchase_price, label: "Prix d'achat", placeholder: "200 000€" %>
-            <%= f.input :floor_space, label: "Surface habitable", placeholder: "50m²" %>
-            <%= f.input :year_of_construction, as: :date, start_year: Date.today.year - 150,
-            end_year: Date.today.year, discard_day: true, discard_month: true, label: "Année de construction" %>
-            <%= f.input :date_of_purchase, as: :date, start_year: Date.today.year - 60,
-            end_year: Date.today.year, discard_day: true, order: [:month, :year], label: "Date d'achat:"%>
-            <%= f.input :photo, as: :file, label:"Image"%>
-            <%= f.submit "Ajouter", class: "btn btn-sm btn-primary btn-block mt-2"%>
-            <% end %>
-        </div>
-    </div>
-  </div>
+<div class="mapboxgl-ctrl-geocoder">
+<%= simple_form_for [@real_estate] do |f| %>
+<%= f.input :address,
+input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}},
+label: "Address", placeholder: "Please type the address here..." %>
+<%= f.input :description, label: "Description", placeholder: "Please type a short description here" %>
+<%= f.input :type_of, collection: RealEstate::TYPES,label: "Type:" %>
+<%= f.input :category, collection: RealEstate::CATEGORIES,label:"Category" %>
+<%= f.input :purchase_price, label: "Purchase price", placeholder: "200 000€" %>
+<%= f.input :floor_space, label: "Floor space", placeholder: "50m²" %>
+<%= f.input :year_of_construction, as: :date, start_year: Date.today.year - 150,
+end_year: Date.today.year, discard_day: true, discard_month: true, label: "Year of construction:" %>
+<%= f.input :date_of_purchase, as: :date, start_year: Date.today.year - 60,
+end_year: Date.today.year, discard_day: true, order: [:month, :year], label: "Date of purchase:"%>
+<%= f.input :photo, as: :file, label:"Picture"%>
+<%= f.submit "Add", class: "btn btn-ghost"%>
+<% end %>
 </div>

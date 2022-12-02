@@ -2,20 +2,25 @@
   <div class="row">
     <div class="col">
       <article>
-        <h1>Adresse: <%= @real_estate.address %></h1>
+        <h2> <%= @real_estate.description %></h2>
+          <p>Address: <%= @real_estate.address %></p>
           <p>Description: <%= @real_estate.description %></p>
-          <p>Type de bien: <%= @real_estate.type_of %></p>
-          <p>Categorie: <%= @real_estate.category %></p>
-          <p>Prix d'achat: <%= @real_estate.purchase_price %>€</p>
-          <p>Surface habitable: <%= @real_estate.floor_space %>m²</p>
-          <p>Année de construction: <%= @real_estate.year_of_construction %></p>
-          <p>Date d'achat: <%= @real_estate.date_of_purchase %></p>
-          <p>Estimation: <%= @real_estate.estimation %>$</p>
-              <%= link_to "Modifier", edit_real_estate_path(@real_estate) %>
-              <%= link_to 'Supprimer', real_estate_path(@real_estate), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ce bien ?" }  %>
-              <%= link_to "Immobilier", real_estates_path  %>
+          <p>Type: <%= @real_estate.type_of %></p>
+          <p>Category: <%= @real_estate.category %></p>
+          <p>Purchase price: <%= @real_estate.purchase_price %>€</p>
+          <p>Floor space: <%= @real_estate.floor_space %>m²</p>
+          <p>Year of construction: <%= @real_estate.year_of_construction %></p>
+          <p>Date of purchase: <%= @real_estate.date_of_purchase %></p>
+          <p>Estimated price: <%= @real_estate.estimation %>$</p>
+          <p> <%= (@real_estate.estimation - @real_estate.purchase_price) if @real_estate.estimation %></p>
+          <br>
+          <%= cl_image_tag @real_estate.photo.key, height: 300, width: 400, crop: :fill %>
+          <br>
+          <br>
+          <%= link_to "Edit", edit_real_estate_path(@real_estate), class: "btn btn-ghost" %>
+          <%= link_to 'Delete', real_estate_path(@real_estate), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ce bien ?" },class: "btn btn-ghost"  %>
+          <%= link_to "Real Estate", real_estates_path,class: "btn btn-ghost"  %>
         </article>
-         <%= cl_image_tag @real_estate.photo.key, height: 300, width: 400, crop: :fill %>
       </div>
     </div>
 </div>
