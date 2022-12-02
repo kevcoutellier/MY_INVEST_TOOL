@@ -1,8 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col">
-    <center><h1>Ajouter mon immobilier</h1></center>
-        <br>
           <div class="mapboxgl-ctrl-geocoder">
             <%= simple_form_for [@real_estate] do |f| %>
             <%= f.input :address,
@@ -17,9 +15,9 @@
             <%= f.input :year_of_construction, as: :date, start_year: Date.today.year - 150,
             end_year: Date.today.year, discard_day: true, discard_month: true, label: "Année de construction" %>
             <%= f.input :date_of_purchase, as: :date, start_year: Date.today.year - 60,
-            end_year: Date.today.year, discard_day: true, order: [:month, :year], label: "Date d'achat:" %>
-            <%= f.input :photo, as: :file, label:"Image" %>
-            <%= f.submit "Ajouter", class: "btn btn-primary" %>
+            end_year: Date.today.year, discard_day: true, order: [:month, :year], label: "Date d'achat:"%>
+            <%= f.input :photo, as: :file, label:"Image"%>
+            <%= f.submit "Ajouter", class: "btn btn-sm btn-primary btn-block mt-2"%>
             <% end %>
         </div>
     </div>

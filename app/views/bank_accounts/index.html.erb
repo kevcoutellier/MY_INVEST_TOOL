@@ -1,0 +1,5 @@
+<h1>Comptes bancaires</h1>
+ <% @bank_accounts.each do |bank_account| %>
+ <li><%= link_to bank_account, bank_account_path(bank_account) %></li>
+ <% end %>
+ <%= link_to "Ajouter mes comptes", new_bank_account_path%>

@@ -1,16 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <center><h1>Immobilier</h1></center>
+      <h1>Immobilier</h1>
+      <div style="width: 100%; height: 600px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        <br>
           <ul>
-            <% @real_estates.each do |real_estate| %>
-            <% if real_estate.photo.key  %>
-            <%= cl_image_tag real_estate.photo.key, height: 300, width: 400, crop: :fill %>
-            <% end %>
-            <li><%= link_to real_estate.address, real_estate_path(real_estate) %></li>
-            <%end %>
+              <% @real_estates.each do |real_estate| %>
+              <% if real_estate.photo.key  %>
+              <%= cl_image_tag real_estate.photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
+              <li><%= link_to real_estate.address, real_estate_path(real_estate) %></li>
+              <%end %>
           </ul>
-          <%= link_to "Ajoutez un bien", new_real_estate_path%>
+              <%= link_to "Ajoutez un bien", new_real_estate_path%>
       </div>
   </div>
 </div>

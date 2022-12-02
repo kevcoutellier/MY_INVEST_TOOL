@@ -11,4 +11,6 @@ class RealEstate < ApplicationRecord
   validates :year_of_construction, presence: true
   validates :date_of_purchase, presence: true
   has_one_attached :photo
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

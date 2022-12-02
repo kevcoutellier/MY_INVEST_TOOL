@@ -1,2 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "components/avatar";
+@import "components/navbar";
+
+.btn-flat{
+  align-items: center;
+}
