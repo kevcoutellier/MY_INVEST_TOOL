@@ -11,6 +11,7 @@
           <p>Année de construction: <%= @real_estate.year_of_construction %></p>
           <p>Date d'achat: <%= @real_estate.date_of_purchase %></p>
           <p>Estimation: <%= @real_estate.estimation %>$</p>
+          <p> <%= (@real_estate.estimation - @real_estate.purchase_price) if @real_estate.estimation %></p>
               <%= link_to "Modifier", edit_real_estate_path(@real_estate) %>
               <%= link_to 'Supprimer', real_estate_path(@real_estate), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ce bien ?" }  %>
               <%= link_to "Immobilier", real_estates_path  %>
