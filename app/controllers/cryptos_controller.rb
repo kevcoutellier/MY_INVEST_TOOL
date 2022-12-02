@@ -41,7 +41,11 @@ class CryptosController < ApplicationController
             user_serialized = URI.open(url3).read
             @crypto_wallet = JSON.parse(user_serialized)
         @crypto.user = current_user
-        @crypto.quantity = @crypto_wallet["result"].to_f.round(4)
+        if @crypto_wallet["result"].length >= 19
+          @crypto.quantity =  @crypto_wallet["result"].split('').insert(1, '.').join.to_f
+        else
+          @crypto.quantity =  @crypto_wallet["result"].rjust(18, '0').split('').insert(0, '.').join.to_f
+        end
         if @crypto.save
           redirect_to cryptos_path
         end

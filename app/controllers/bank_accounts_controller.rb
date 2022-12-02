@@ -8,6 +8,14 @@ class BankAccountsController < ApplicationController
     @bank_account = BankAccount.new
   end
 
+# BANKING API
+
+  url2 = "https://{domain}.biapi.pro/2.0/auth/webview/{lang}/connect"
+        user_serialized = URI.open(url2).read
+          @bank_user = JSON.parse(user_serialized)
+
+
+
   def create
     @bank_account = BankAccount.new(bank_account_params)
     @bank_account.user = current_user
