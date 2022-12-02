@@ -91,3 +91,28 @@
     margin-top: 20px;
   }
 }
+
+.bottom-card{
+  padding-top: 10px;
+  display: flex;
+
+  p{
+    padding-left: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+  }
+}
+
+
+#total{
+
+  p{
+
+    text-decoration: none;
+    color: white;
+    opacity: 0.5;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}

@@ -4,15 +4,6 @@ main {
   font-family: 'Open Sans', sans-serif;
 }
 
-.navbar a {
-  text-decoration: none;
-  color: white;
-  opacity: 0.5;
-  &:hover{
-    opacity: 1;
-  }
-}
-
 .toggle-side-nav {
   display: flex;
   justify-content: center;
@@ -47,6 +38,14 @@ header {
   overflow: hidden;
 }
 .nav-main {
+  a{
+    text-decoration: none;
+    color: white;
+    opacity: 0.5;
+    &:hover{
+      opacity: 1;
+    }
+  }
   ul {
     display: flex;
     align-items: center;
@@ -130,5 +129,14 @@ header {
     list-style: none;
     padding-left: 0;
     z-index: 2;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+    opacity: 0.5;
+    &:hover{
+      opacity: 1;
+    }
   }
 }
