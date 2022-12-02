@@ -30,9 +30,9 @@ custom_invest.save
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669801293/my_invest/appartement-photo_cavo34.jpg")
 real_estate = RealEstate.new(
   address: "3059 Grand Ave Suite 340, Coconut Grove, FL 33133, États-Unis",
-  description: "Chez moi",
-  type_of: "Maison",
-  category: "Résidence principale",
+  description: "My Home",
+  type_of: "House",
+  category: "Principal residence",
   purchase_price: 200_000,
   floor_space: 200,
   year_of_construction: Date.new(1978, 11, 23),
@@ -45,8 +45,8 @@ file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669801296/m
 real_estate2 = RealEstate.new(
   address: "93 Palm Ave, Miami Beach, FL 33139, États-Unis",
   description: "Airbnb le Wagon",
-  type_of: "Appartement",
-  category: "Résidence secondaire",
+  type_of: "Flat",
+  category: "Principal residence",
   purchase_price: 50_000,
   floor_space: 100,
   year_of_construction: Date.new(2010, 11, 17),
@@ -59,9 +59,9 @@ file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669801299/m
 
 real_estate3 = RealEstate.new(
   address: "1300 Brickell Bay Dr Suite 100, Miami, FL 33131, États-Unis",
-  description: "Location à l'année",
-  type_of: "Appartement",
-  category: "Bien locatif",
+  description: "Seasonal renting",
+  type_of: "Secondary residence",
+  category: "Rental property",
   purchase_price: 100_000,
   floor_space: 50,
   year_of_construction: Date.new(1999, 11, 23),
@@ -75,7 +75,7 @@ real_estate3.save
 bank_account = BankAccount.create!(
   bank: "BNP Paribas",
   account_number: "FR3530003000704398932537S50",
-  type_of: "Compte courant",
+  type_of: "Current account",
   balance: 13_531,
   currency: "EUR",
   user: user
@@ -84,7 +84,7 @@ bank_account = BankAccount.create!(
 bank_account2 = BankAccount.create!(
   bank: "BNP Paribas",
   account_number: "FR5010096000706258456462I21",
-  type_of: "Compte d'épargne(Livret)",
+  type_of: "Savings account",
   balance: 8767,
   currency: "EUR",
   user: user
@@ -93,7 +93,7 @@ bank_account2 = BankAccount.create!(
   bank_account3 = BankAccount.create!(
     bank: "Société Générale",
     account_number: "FR4217569000301711585427S64",
-    type_of: "Compte courant",
+    type_of: "Current account",
     balance: 14_265,
     currency: "EUR",
     user: user1
@@ -102,7 +102,7 @@ bank_account2 = BankAccount.create!(
   bank_account4 = BankAccount.create!(
     bank: "Société Générale",
     account_number: "FR4217569000301711585427S64",
-    type_of: "Compte d'épargne(Livret)",
+    type_of: "Savings account",
     balance: 2500,
     currency: "EUR",
     user: user1
@@ -111,7 +111,7 @@ bank_account2 = BankAccount.create!(
   bank_account5 = BankAccount.create!(
     bank: "Crédit Mutuel",
     account_number: "FR2510096000403743519222V21",
-    type_of: "Compte courant",
+    type_of: "Current account",
     balance: 8500,
     currency: "EUR",
     user: user2
@@ -120,7 +120,7 @@ bank_account2 = BankAccount.create!(
   bank_account6 = BankAccount.create!(
     bank: "Crédit Mutuel",
     account_number: "FR2510096000403743519222V21",
-    type_of: "Compte d'épargne(Livret)",
+    type_of: "Savings account",
     balance: 10_500,
     currency: "EUR",
     user: user2
