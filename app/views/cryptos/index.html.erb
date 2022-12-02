@@ -21,7 +21,7 @@
         <%= link_to crypto.name, crypto_path(crypto), class: "crypto_id" %>
         <% wallet_amount = crypto.quantity * @crypto_sorted["ethereum"]["usd"].to_i  %>
         <% @total += wallet_amount %>
-        <p><%= wallet_amount.round(3)  %>$</p>
+        <p><%= wallet_amount.round(2)  %> $ <%= crypto.quantity.round(4) %>ETH</p>
 
       </div>
         <%= link_to "Edit", edit_crypto_path(crypto), class:""  %>
@@ -30,7 +30,7 @@
   </div>
   <%= link_to "Ajouter un nouveau wallet", new_crypto_path, class: "" %>
 
-    <p>Total<%= @total %>($)</p>
+    <p>Total = <%= @total.round(2) %>($)</p>
   </div>
 
 <%# DIAGRAMME CRYPTO %>
