@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @real_estates = RealEstate.all
+    @bank_accounts = BankAccount.all
+    @custom_invest = 12
+
 
   end
 
