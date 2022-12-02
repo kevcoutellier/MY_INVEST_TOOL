@@ -4,7 +4,7 @@ main {
   font-family: 'Open Sans', sans-serif;
 }
 
-a {
+.navbar a {
   text-decoration: none;
   color: white;
   opacity: 0.5;
@@ -56,7 +56,7 @@ header {
 
     li {
       position: relative;
-      padding: 0 10px 0 0;
+      padding: 0 20px 0 0;
 
       &:hover {
         > ul {

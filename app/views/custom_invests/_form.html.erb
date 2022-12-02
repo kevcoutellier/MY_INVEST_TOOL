@@ -3,9 +3,10 @@
     <%= simple_form_for(@custom_invest) do |f| %>
     <%= f.input :name, label:"Nom"  %>
     <%= f.input :category, label:"Category" %>
-    <%# <%= f.input :description, label:"Description" %> %>
     <%= f.input :quantity, label:"Quantity" %>
     <%= f.input :unity_cost, label:"unity_cost" %>
+    <%= f.input :actual_cost, label:"actual_cost" %>
+    <%= f.input :description, label:"description" %>
     <%= f.input :photo, as: :file %>
     <%= f.submit "Créer mon annonce", class: "btn-form"%>
     <% end %>

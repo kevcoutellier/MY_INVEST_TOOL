@@ -5,10 +5,10 @@
   <div class="cards">
     <%if params[:query] == nil%>
     <div class="card">
-      <%= link_to "Add a new", new_custom_invest_path, class: "add-bot"%>
-      <img src="https://images.surfacemag.com/app/uploads/2021/08/23031625/tesla-bot.jpg" alt="" class="card__img card__img--full">
+      <%= link_to "", new_custom_invest_path, class: "add-bot"%>
+      <img src="https://res.cloudinary.com/dezfv3vmn/image/upload/v1668769399/samples/cloudinary-icon.png" alt="" class="card__img card__img--full">
       <div>
-        <p>AJOUTER UN BOT</p>
+        <p>+</p>
       </div>
     </div>
     <% end %>
@@ -25,17 +25,25 @@
             <% if custom_invest.photo.key  %>
               <%= cl_image_tag custom_invest.photo.key, class:"card__img", crop: :fill %>
             <% end %>
-              <%#= cl_image_tag bot.photo.key, class:"card__img", crop: :fill %>
+              <%#= cl_image_tag custom_invest.photo.key, class:"card__img", crop: :fill %>
             </div>
           </div>
             <div class="swiper-slide" id="descrip">
+              <h2>Détails</h2>
+              <p>Type : <%= custom_invest.category %></p>
+              <p>Quantity : <%= custom_invest.quantity %> u</p>
+              <p>Unity_cost : <%= custom_invest.unity_cost %> $</p>
+              <p>Actual_cost : <%= custom_invest.actual_cost %> $</p>
+
+             <% if custom_invest.actual_cost && custom_invest.unity_cost %>
+              <p><%= custom_invest.gain %></p>
+             <% end %>
+            </div>
+            <div class="swiper-slide" id="descrip">
               <h2>Description</h2>
               <p><%= custom_invest.description %></p>
-              <p><%= custom_invest.quantity %>€/Jour</p>
-              <p><%=  %>⭐️</p>
-            </div>
-            <div class="swiper-slide ">
 
+            </div>
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
@@ -52,7 +60,10 @@
         </div>
         <% end %>
       </div>
-      <div id="mapbox">
+
+      <div style="background: #606679;">
+      <h3>Recapitulatif</h3>
+      <p><%= CustomInvest.total_gain %></p>
       </div>
     </div>
   </div>

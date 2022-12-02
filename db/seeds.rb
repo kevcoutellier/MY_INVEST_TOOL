@@ -13,17 +13,17 @@ user1 = User.create!(email: "kev@my_invest.fr", password: "password", owner: fal
 user2 = User.create!(email: "dia@my_invest.fr", password: "password", owner: false)
 
 
-# file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669731177/my_invest/nike-futur_iacdl6.jpg")
-# custom_invest = CustomInvest.new(
-# name: "Nike RVF",
-# category: "shoes",
-# description: "Les chaussures de retour vers le futur version NIKE industrie",
-# quantity: 1,
-# unity_cost: 180,
-# actual_cost: 400,
-# user: user)
-# custom_invest.photo.attach(io: file, filename: "nike-futur.jpg", content_type: "image/jpg")
-# custom_invest.save
+file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669731177/my_invest/nike-futur_iacdl6.jpg")
+custom_invest = CustomInvest.new(
+name: "Nike RVF",
+category: "shoes",
+description: "Les chaussures de retour vers le futur version NIKE industrie",
+quantity: 1,
+unity_cost: 180,
+actual_cost: 400,
+user: user)
+custom_invest.photo.attach(io: file, filename: "nike-futur.jpg", content_type: "image/jpg")
+custom_invest.save
 
 
 
