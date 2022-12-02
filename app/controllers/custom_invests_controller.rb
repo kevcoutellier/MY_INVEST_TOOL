@@ -1,10 +1,18 @@
 class CustomInvestsController < ApplicationController
   # validates :name,:category, :quantity, :unity_cost
   # belongs_to :user
-  before_action :set_custom_invest, only: [:edit, :update, :destroy]
+  before_action :set_custom_invest, only: [:edit, :show, :update, :destroy]
 
   def index
+    @custom_invests = CustomInvest.all
 
+    # @markers = @custom_invests.geocoded.map do |custom_invest|
+    #   {
+    #     lat: custom_invest.latitude,
+    #     lng: custom_invest.longitude,
+    #     info_window: render_to_string(partial: "info_window", locals: {custom_invest: custom_invest})
+    #   }
+    # end
   end
 
   def new
@@ -23,6 +31,7 @@ class CustomInvestsController < ApplicationController
   end
 
   def show
+    @custom_invest = CustomInvest.find(params[:id])
   end
 
   def edit
@@ -44,7 +53,7 @@ class CustomInvestsController < ApplicationController
   private
 
   def params_custom_invest
-    params.require(:custom_invest).permit(:name,:category, :quantity, :unity_cost)
+    params.require(:custom_invest).permit(:name,:category, :quantity, :unity_cost, :actual_cost, :description, :photo)
   end
 
   def set_custom_invest

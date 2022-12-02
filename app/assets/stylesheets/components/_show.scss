@@ -1,0 +1,55 @@
+
+.show-card{
+  width: 1000px;
+  max-height: 800px;
+  margin: 0 auto;
+  // display: flex;
+  padding-top: 20px;
+  background-color: rgba($color: #ffffff1a, $alpha: 0.2);
+
+
+  &__top{
+    display: flex;
+    gap: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  &__img{
+    width: 600px;
+
+    img{
+      width: 100%;
+    }
+  }
+
+  &__text{
+    padding: 15px;
+  }
+
+  &__action{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.left{
+  img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+  }
+}
+
+.right{
+    height: 600px;
+    width: 500px;
+    overflow: hidden;
+}
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+}

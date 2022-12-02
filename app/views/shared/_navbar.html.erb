@@ -5,28 +5,48 @@
   <nav class="nav-main">
     <ul>
       <li><%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "toggle-side-nav avatar", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></li>
-      <li><a href="#">Real Estates</a></li>
-      <li><a href="#">Crypto</a></li>
-      <li><a href="#">Customers</a></li>
+      <li><%= link_to "Dashboard", "/" %></li>
+      <li><%= link_to "Real Estates", real_estates_path %></li>
+      <li><%= link_to "Cryptomonnaie", cryptos_path %></li>
+      <li><%= link_to "Custom Invest", custom_invests_path %></li>
+      <li><%= link_to "Bank", custom_invests_path %></li>
+
       <li><a href="#">
         +</a>
         <ul>
-          <li><a href="#">Real Estates</a></li>
-          <li><a href="#">Crypto</a></li>
-          <li><a href="#">Customers</a></li>
+          <li><%= link_to "Real Estate", new_real_estate_path %></li>
+          <li><%= link_to "Cryptomonnaie", new_crypto_path %></li>
+          <li><%= link_to "Custom Invest", new_custom_invest_path %></li>
         </ul>
       </li>
     </ul>
-    <button class="search" type="button">search</button>
+
+    <button class="search" type="button">search
+    </button>
   </nav>
 </header>
 <main class="main">
   <nav class="nav-offset">
     <div class="overlay"></div>
       <ul>
-        <li><a href="#">Profil</a></li>
-        <li><a href="#">Connexion</a></li>
-        <li><a href="#">Instagram</a></li>
+        <li>
+            <% if user_signed_in? %>
+              <li class="nav-item dropdown">
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              </li>
+              <li class="nav-item dropdown">
+                Sebastien SAUNIER
+              </li>
+              <li class="nav-item">
+                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link dropdown-item" %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+              </li>
+            <% end %>
+        </li>
+        <li><a href="#">Other</a></li>
     </ul>
   </nav>
 </main>
