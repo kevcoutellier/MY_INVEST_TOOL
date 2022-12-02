@@ -9,25 +9,27 @@
 </marquee>
 
 <div class="en-tete">
-  <h1>My cryptos</h1>
-  <p>Amount</p>
+  <h1>Mes cryptos</h1>
+  <p>Total($)</p>
 </div>
 
 <%# CLASSEMENT CRYPTO %>
-<table class="table">
+
+
+<table class="crypto-classement">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Price($usd)</th>
-      <th scope="col">Market Cap</th>
-      <th scope="col">usd_24h_vol</th>
-      <th scope="col">usd_24h_change</th>
-      <th scope="col">last_updated_at</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prix($USD)</th>
+      <th scope="col">Capitalisation ($USD)</th>
+      <th scope="col">Volume 24h ($USD)</th>
+      <th scope="col">Variation 24h (%)</th>
+      <th scope="col">Dernière MàJ</th>
     </tr>
   </thead>
   <tbody>
-<% @crypto_user.keys.each_with_index do |key, index| %>
+<% @crypto_sorted.keys.each_with_index do |key, index| %>
     <tr>
       <th scope="row"><%= index+1 %></th>
       <td><%= key %> </td>
@@ -50,10 +52,10 @@
 
 <%# INDEX CRYPTO %>
 <div class="crypto-index">
-        <%= link_to "add", new_crypto_path, class: "btn-medium" %>
   <% @cryptos.each do |crypto| %>
     <div><%= link_to crypto.name, crypto_path(crypto), class: "crypto_id" %></div>
-        <%= link_to "edit", edit_crypto_path(crypto), class: "btn-medium" %>
-        <%= link_to 'delete', crypto_path(crypto) , class:"btn-medium", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
+    <%= link_to "edit", edit_crypto_path(crypto), class:""  %>
+    <%= link_to 'delete', crypto_path(crypto) , class:"", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
   <% end %>
+        <%= link_to "add", new_crypto_path, class: "" %>
 </div>
