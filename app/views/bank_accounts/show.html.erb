@@ -1,7 +1,12 @@
-<h1>Détail de mon compte</h1>
-<p>Banque <%= @bank_account.bank %></p>
-<p>Numéro de compte: <%= @bank_account.account_number %></p>
-<p>Type de compte: <%= @bank_account.type_of %></p>
-<p>Solde: <%= @bank_account.balance %></p>
-<p>Devise: <%= @bank_account.currency %></p>
-<%= link_to 'Supprimer', bank_account_path(@bank_account), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ce compte ?" }  %>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Bank Account Details</h1>
+      <p>Bank: <%= @bank_account.bank %></p>
+      <p>Account number: <%= @bank_account.account_number %></p>
+      <p>Type: <%= @bank_account.type_of %></p>
+      <p>Balance: <%= @bank_account.balance %> <%= @bank_account.currency %></p>
+      <%= link_to 'Delete', bank_account_path(@bank_account), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ce compte ?" }, class: "btn btn-ghost"  %>
+        </div>
+    </div>
+ </div>

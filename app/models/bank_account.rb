@@ -1,5 +1,5 @@
 class BankAccount < ApplicationRecord
-  TYPES = ["Compte courant", "Compte d'épargne(Livret)", "Compte joint", "Carte de crédit"]
+  TYPES = ["Current account", "Savings account", "Joint bank account", "Credit card account"]
   CURRENCY = ["EUR", "USD"]
   belongs_to :user
   validates :bank, presence: true
