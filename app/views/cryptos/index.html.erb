@@ -12,23 +12,26 @@
 <%# INDEX INFOS %>
   <div class="en-tete">
     <h1>Mes cryptos</h1>
-    <p>Total<%= @crypto %>($)</p>
-  </div>
 
 <%# INDEX CRYPTO %>
+<% @total = 0 %>
   <div class="crypto-index">
     <% @cryptos.each do |crypto| %>
       <div>
         <%= link_to crypto.name, crypto_path(crypto), class: "crypto_id" %>
-        <% wallet_amount = crypto.quantity.round(4) * @crypto_sorted["ethereum"]["usd"].to_i  %>
-        <p><%= wallet_amount.to_f.round(2)  %></p>
+        <% wallet_amount = crypto.quantity * @crypto_sorted["ethereum"]["usd"].to_i  %>
+        <% @total += wallet_amount %>
+        <p><%= wallet_amount.round(3)  %>$</p>
 
       </div>
-        <%= link_to "Modifier", edit_crypto_path(crypto), class:""  %>
-        <%= link_to 'Effacer', crypto_path(crypto) , class:"", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
+        <%= link_to "Edit", edit_crypto_path(crypto), class:""  %>
+        <%= link_to 'Delete', crypto_path(crypto) , class:"", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
     <% end %>
   </div>
   <%= link_to "Ajouter un nouveau wallet", new_crypto_path, class: "" %>
+
+    <p>Total<%= @total %>($)</p>
+  </div>
 
 <%# DIAGRAMME CRYPTO %>
   <div class="crypto-donut">
@@ -40,11 +43,11 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Nom</th>
-        <th scope="col">Prix($USD)</th>
-        <th scope="col">Capitalisation ($USD)</th>
-        <th scope="col">Volume 24h ($USD)</th>
-        <th scope="col">Variation 24h (%)</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price($USD)</th>
+        <th scope="col">Market Cap ($USD)</th>
+        <th scope="col">24h Volume ($USD)</th>
+        <th scope="col">24h Variation  (%)</th>
       </tr>
     </thead>
     <tbody>
