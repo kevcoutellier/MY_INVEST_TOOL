@@ -25,9 +25,9 @@
 //   });
 // }
 
-import { CoinGeckoClient } from 'coingecko-api-v3';
-const client = new CoinGeckoClient({
-  timeout: 10000,
-  autoRetry: true,
-});
-const trendingSearch = await client.trending();
+// import { CoinGeckoClient } from 'coingecko-api-v3';
+// const client = new CoinGeckoClient({
+//   timeout: 10000,
+//   autoRetry: true,
+// });
+// const trendingSearch = await client.trending();
