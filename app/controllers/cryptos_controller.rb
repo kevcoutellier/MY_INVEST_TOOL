@@ -1,8 +1,11 @@
 require "open-uri"
 
 class CryptosController < ApplicationController
+
+
   # validates :wallet_address /^0x[a-fA-F0-9]{40}$
   # belongs_to :user
+
 
   def index
 
@@ -14,6 +17,7 @@ class CryptosController < ApplicationController
       http.use_ssl = true
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       request = Net::HTTP::Get.new(url)
+
       request['Authorization'] = 'Bearer odf09g6yvwsk9meqpcop'
       res = http.request(request)
         response = JSON.parse(res.read_body)
