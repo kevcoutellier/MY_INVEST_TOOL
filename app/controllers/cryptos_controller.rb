@@ -1,7 +1,7 @@
 require "open-uri"
 
 class CryptosController < ApplicationController
-
+  # validates :wallet_address /^0x[a-fA-F0-9]{40}$
   # belongs_to :user
 
   def index
@@ -13,11 +13,8 @@ class CryptosController < ApplicationController
       http = Net::HTTP.new(url.host, url.port)
       http.use_ssl = true
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
       request = Net::HTTP::Get.new(url)
-
       request['Authorization'] = 'Bearer odf09g6yvwsk9meqpcop'
-
       res = http.request(request)
         response = JSON.parse(res.read_body)
         @response = response["symbols"]
@@ -29,25 +26,26 @@ class CryptosController < ApplicationController
         @crypto_sorted = @crypto_user.sort_by {|key, value| [-value["usd_market_cap"], key] }.to_h
         @crypto_keys = @crypto_user.keys
 
-    # API CRYPTO WALLET
+  end
+
+      def new
         @crypto = Crypto.new
-      url3 = "https://api.etherscan.io/api?module=account&action=balance&address= #{}&tag=latest&apikey=HTNFYRJEM2I5FQJNP6H4FCHM7CH2TZEQMY"
-      user_serialized = URI.open(url3).read
-      @crypto_wallet = JSON.parse(user_serialized)
+      end
 
-  end
+      def create
+        @crypto = Crypto.new(crypto_params)
 
-  def new
-    @crypto = Crypto.new
-  end
-
-  def create
-    @crypto = Crypto.new(crypto_params)
-    @crypto.user = current_user
-    if @crypto.save
-      redirect_to cryptos_path
-    end
-  end
+    # API CRYPTO WALLET
+          wallet = params[:crypto][:wallet_address]
+            url3 = "https://api.etherscan.io/api?module=account&action=balance&address=#{wallet}&tag=latest&apikey=HTNFYRJEM2I5FQJNP6H4FCHM7CH2TZEQMY"
+            user_serialized = URI.open(url3).read
+            @crypto_wallet = JSON.parse(user_serialized)
+        @crypto.user = current_user
+        @crypto.quantity = @crypto_wallet["result"].to_f.round(4)
+        if @crypto.save
+          redirect_to cryptos_path
+        end
+      end
 
   def edit
     @crypto = Crypto.find(params[:id])
@@ -76,11 +74,11 @@ class CryptosController < ApplicationController
 
     private
 
-    def crypto_params
-      params.require(:crypto).permit(:name, :wallet_address)
-    end
+  def crypto_params
+    params.require(:crypto).permit(:name, :wallet_address)
+  end
 
-    def set_crypto
-      @crypto = Crypto.find(params[:id])
-    end
+  def set_crypto
+    @crypto = Crypto.find(params[:id])
+  end
 end

@@ -1,61 +1,62 @@
-<marquee>
-  <div class="crypto-news-feed">
-    <% @response.each do |response| %>
-      <p><div><%= response["symbol"] %>=</div>
-      <div><%= response["last"].to_f.round(2) %>$</div>
-      <div>24H%=<%= response["daily_change_percentage"].to_f.round(2) %></div></p>
-    <% end %>
+<%# CRYPTO BANDEAU %>
+  <marquee>
+    <div class="crypto-news-feed">
+      <% @response.each do |response| %>
+        <p><div><%= response["symbol"] %>=</div>
+        <div><%= response["last"].to_f.round(2) %>$</div>
+        <div>24H%=<%= response["daily_change_percentage"].to_f.round(2) %></div></p>
+      <% end %>
+    </div>
+  </marquee>
+
+<%# INDEX INFOS %>
+  <div class="en-tete">
+    <h1>Mes cryptos</h1>
+    <p>Total<%= @crypto %>($)</p>
   </div>
-</marquee>
-
-<div class="en-tete">
-  <h1>Mes cryptos</h1>
-  <p>Total($)</p>
-</div>
-
-<%# CLASSEMENT CRYPTO %>
-
-
-<table class="crypto-classement">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nom</th>
-      <th scope="col">Prix($USD)</th>
-      <th scope="col">Capitalisation ($USD)</th>
-      <th scope="col">Volume 24h ($USD)</th>
-      <th scope="col">Variation 24h (%)</th>
-      <th scope="col">Dernière MàJ</th>
-    </tr>
-  </thead>
-  <tbody>
-<% @crypto_sorted.keys.each_with_index do |key, index| %>
-    <tr>
-      <th scope="row"><%= index+1 %></th>
-      <td><%= key %> </td>
-      <td> <%= @crypto_user[key]["usd"] %> </td>
-  <td> <%= @crypto_user[key]["usd_market_cap"] %> </td>
-  <td> <%= @crypto_user[key]["usd_24h_vol"] %> </td>
-  <td> <%= @crypto_user[key]["usd_24h_change"] %> </td>
-  <td> <%= @crypto_user[key]["last_updated_at"] %> </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<%# DIAGRAMME CRYPTO %>
-<div class="crypto-donut">
-  donut
-</div>
-
-<br>
 
 <%# INDEX CRYPTO %>
-<div class="crypto-index">
-  <% @cryptos.each do |crypto| %>
-    <div><%= link_to crypto.name, crypto_path(crypto), class: "crypto_id" %></div>
-    <%= link_to "edit", edit_crypto_path(crypto), class:""  %>
-    <%= link_to 'delete', crypto_path(crypto) , class:"", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
+  <div class="crypto-index">
+    <% @cryptos.each do |crypto| %>
+      <div>
+        <%= link_to crypto.name, crypto_path(crypto), class: "crypto_id" %>
+        <% wallet_amount = crypto.quantity.round(4) * @crypto_sorted["ethereum"]["usd"].to_i  %>
+        <p><%= wallet_amount.to_f.round(2)  %></p>
+
+      </div>
+        <%= link_to "Modifier", edit_crypto_path(crypto), class:""  %>
+        <%= link_to 'Effacer', crypto_path(crypto) , class:"", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
+    <% end %>
+  </div>
+  <%= link_to "Ajouter un nouveau wallet", new_crypto_path, class: "" %>
+
+<%# DIAGRAMME CRYPTO %>
+  <div class="crypto-donut">
+    <%# donut %>
+  </div>
+
+<%# CLASSEMENT CRYPTO %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prix($USD)</th>
+        <th scope="col">Capitalisation ($USD)</th>
+        <th scope="col">Volume 24h ($USD)</th>
+        <th scope="col">Variation 24h (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+  <% @crypto_sorted.keys.each_with_index do |key, index| %>
+      <tr>
+        <th scope="row"><%= index+1 %></th>
+        <td><%= key %> </td>
+        <td> <%= @crypto_user[key]["usd"] %> </td>
+    <td> <%= @crypto_user[key]["usd_market_cap"] %> </td>
+    <td> <%= @crypto_user[key]["usd_24h_vol"] %> </td>
+    <td> <%= @crypto_user[key]["usd_24h_change"] %> </td>
+      </tr>
   <% end %>
-        <%= link_to "add", new_crypto_path, class: "" %>
-</div>
+    </tbody>
+  </table>
