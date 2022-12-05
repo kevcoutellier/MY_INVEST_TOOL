@@ -1,27 +1,18 @@
- <div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <div class="mapboxgl-ctrl-geocoder">
-        <%= simple_form_for [@real_estate] do |f| %>
-        <%= f.input :address,
-        input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-        wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}},
-        label: "Address", placeholder: "Please type the address here..." %>
-        </div>
-        <%= f.input :description, label: "Description", placeholder: "Please type a short description here" %>
-        <%= f.input :type_of, collection: RealEstate::TYPES,label: "Type:" %>
-        <%= f.input :category, collection: RealEstate::CATEGORIES,label:"Category" %>
-        <%= f.input :purchase_price, label: "Purchase price", placeholder: "200 000€" %>
-        <%= f.input :floor_space, label: "Floor space", placeholder: "50m²" %>
-        <%= f.input :year_of_construction, as: :date, start_year: Date.today.year - 150,
-        end_year: Date.today.year, discard_day: true, discard_month: true, label: "Year of construction:" %>
-        <%= f.input :date_of_purchase, as: :date, start_year: Date.today.year - 60,
-        end_year: Date.today.year, discard_day: true, order: [:month, :year], label: "Date of purchase:"%>
-        <%= f.input :photo, as: :file, label:"Picture"%>
-        <%= f.submit "Add", class: "btn btn-flat"%>
-        <% end %>
-    </div>
-    </div>
+ <div class="container py-5 justify-content-center">
+  <div class="bg-white rounded p-3 shadow booking-real ">
+      <%= simple_form_for [@real_estate] do |f| %>
+      <%= f.input :address, label: "Address", placeholder: "Please type the address here..." %>
+      <%= f.input :description, label: "Description", placeholder: "Please type a short description here" %>
+      <%= f.input :type_of, collection: RealEstate::TYPES,label: "Type:" %>
+      <%= f.input :category, collection: RealEstate::CATEGORIES,label:"Category" %>
+      <%= f.input :purchase_price, label: "Purchase price", placeholder: "200 000€" %>
+      <%= f.input :floor_space, label: "Floor space", placeholder: "50m²" %>
+      <%= f.input :year_of_construction, as: :date, start_year: Date.today.year - 150,
+      end_year: Date.today.year, discard_day: true, discard_month: true, label: "Year of construction:" %>
+      <%= f.input :date_of_purchase, as: :date, start_year: Date.today.year - 60,
+      end_year: Date.today.year, discard_day: true, order: [:month, :year], label: "Date of purchase:"%>
+      <%= f.input :photo, as: :file, label:"Picture"%>
+      <%= f.submit "Add", class: "btn btn-flat"%>
+      <% end %>
   </div>
 </div>

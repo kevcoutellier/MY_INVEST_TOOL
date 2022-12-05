@@ -35,6 +35,7 @@
               data-controller="map"
               data-map-markers-value="<%= [@markers.find{|marker| marker[:real_estate_id] == real_estate.id}].to_json %>"
               data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+              <%  %>
               </div>
             </div>
             <!-- If we need pagination -->

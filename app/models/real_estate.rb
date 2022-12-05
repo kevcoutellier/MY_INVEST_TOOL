@@ -1,6 +1,6 @@
 class RealEstate < ApplicationRecord
   belongs_to :user
-  TYPES = ["Appartement", "House", "Building", "Parking/Box", "Ground", "Commercial space", "Other"]
+  TYPES = ["Appartement", "House", "Building", "Parking/Box", "Ground", "Commercial space", "Other","Flat"]
   CATEGORIES = ["Principal residence", "Secondary residence", "Rental property", "Other"]
   validates :address, presence: true, uniqueness: true
   validates :description, presence: true
