@@ -13,12 +13,12 @@
           <p>Quantity : <%= @custom_invest.quantity %> u</p>
           <p>Unity_cost : <%= @custom_invest.unity_cost %> $</p>
           <p>Actual_cost : <%= @custom_invest.actual_cost %> $</p>
-          <%# <p><%= @custom_invest.all_unity_cost %>
+          <p><%= @custom_invest.unity_cost_all %></p>
           <div class="show-card__action">
             <%# < class="">$<%= @bot.price %>
             <div>
-
-
+              <%= link_to "edit", edit_custom_invest_path, class: "btn-medium" %>
+              <%= link_to 'delete', custom_invest_path(@custom_invest), class:"btn-medium", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
             </div>
           </div>
         </div>
