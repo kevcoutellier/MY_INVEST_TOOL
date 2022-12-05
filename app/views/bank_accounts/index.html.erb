@@ -1,12 +1,22 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
+  <div class="cards">
+    <div class="card">
+        <%= link_to "", new_bank_account_path, class: "add-bot"%>
+          <h3>BANK</h3>
+        <h5>Total Gains : <%= CustomInvest.all_gain %> $</h5>
+        <br>
+        <h5>Total Unity_cost : <%= CustomInvest.all_unity_cost %> $</h5>
+        <h5>Total Actual_cost : <%= CustomInvest.all_actual_cost %> $</h5>
+      <div class="add_card_custom">
+        <p><i class="fa-solid fa-plus"></i></p>
+      </div>
+    </div>
+    <div class="card">
       <p class="h2"> My Bank Accounts</p>
         <% @bank_accounts.each do |bank_account| %>
         <li><%= link_to bank_account.bank, bank_account_path(bank_account) %></li>
         <% end %>
         <br>
-        <%= link_to "Add new bank account", new_bank_account_path, class: "btn btn-ghost"%>
-      </div>
-      </div>
+    </div>
   </div>
+</div>
