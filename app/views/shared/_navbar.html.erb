@@ -5,13 +5,30 @@
   <nav class="nav-main">
     <ul>
       <li><%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "toggle-side-nav avatar", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></li>
-      <li><%= link_to "Dashboard", "/" %></li>
-      <li><%= link_to "Real Estates", real_estates_path %></li>
-      <li><%= link_to "Cryptomonnaie", cryptos_path %></li>
-      <li><%= link_to "Custom Invest", custom_invests_path %></li>
-      <li><%= link_to "Bank Account", bank_accounts_path %></li>
-      <li><%= link_to "Liability", liabilities_path %></li>
-
+      <li><%= link_to "/" do %>
+        <i class="fa-solid fa-gauge"></i>
+        <% end %>
+      </li>
+      <li><%= link_to cryptos_path do %>
+        <i class="fa-solid fa-database"></i>
+        <% end %>
+      </li>
+      <li><%= link_to real_estates_path do %>
+        <i class="fa-solid fa-house"></i>
+        <% end %>
+      </li>
+      <li><%= link_to custom_invests_path do %>
+        <i class="fa-solid fa-game-console-handheld"></i>
+        <% end  %>
+      </li>
+      <li><%= link_to bank_accounts_path do %>
+        <i class="fa-solid fa-piggy-bank"></i>
+        <% end %>
+      </li>
+      <li><%= link_to liabilities_path do %>
+        <i class="fa-solid fa-clipboard"></i>
+        <% end %>
+      </li>
       <li><a href="#">
         +</a>
         <ul>
