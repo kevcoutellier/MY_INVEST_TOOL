@@ -10,7 +10,9 @@ class RealEstatesController < ApplicationController
       {
         lat: real_estate.latitude,
         lng: real_estate.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { real_estate: real_estate })
+        info_window: render_to_string(partial: "info_window", locals: { real_estate: real_estate }),
+        real_estate: real_estate.id,
+        image_url: helpers.cloudinary_url(real_estate.photo.key)
       }
     end
   end
@@ -46,7 +48,7 @@ class RealEstatesController < ApplicationController
     @real_estate.estimation = estimation(@real_estate.address)
     @real_estate.user = current_user
     if @real_estate.save
-      redirect_to real_estates_path(@real_estate)
+      redirect_to real_estate_path(@real_estate)
     else
       render :new, status: :unprocessable_entity
     end

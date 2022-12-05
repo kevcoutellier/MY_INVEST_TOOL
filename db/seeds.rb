@@ -29,7 +29,7 @@ custom_invest.save
 
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669801293/my_invest/appartement-photo_cavo34.jpg")
 real_estate = RealEstate.new(
-  address: "3059 Grand Ave Suite 340, Coconut Grove, FL 33133, États-Unis",
+  address: "11 Palm Ave, Miami Beach, FL 33139, États-Unis",
   description: "My Home",
   type_of: "House",
   category: "Principal residence",
@@ -45,7 +45,7 @@ file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669801296/m
 real_estate2 = RealEstate.new(
   address: "93 Palm Ave, Miami Beach, FL 33139, États-Unis",
   description: "Airbnb le Wagon",
-  type_of: "Flat",
+  type_of: "Ground",
   category: "Principal residence",
   purchase_price: 50_000,
   floor_space: 100,
@@ -58,14 +58,14 @@ real_estate2.save
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669801299/my_invest/t%C3%A9l%C3%A9chargement_3_stjfjt.jpg")
 
 real_estate3 = RealEstate.new(
-  address: "1300 Brickell Bay Dr Suite 100, Miami, FL 33131, États-Unis",
-  description: "Seasonal renting",
-  type_of: "Secondary residence",
-  category: "Rental property",
-  purchase_price: 100_000,
-  floor_space: 50,
-  year_of_construction: Date.new(1999, 11, 23),
-  date_of_purchase: Date.new(2010, 11, 16),
+  address: "33 Palm Ave, Miami Beach, FL 33139, États-Unis",
+  description: "Airbnb le Wagon",
+  type_of: "Flat",
+  category: "Principal residence",
+  purchase_price: 50_000,
+  floor_space: 100,
+  year_of_construction: Date.new(2010, 11, 17),
+  date_of_purchase: Date.new(2019, 12, 12),
   user: user2
 )
 real_estate3.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
@@ -127,3 +127,16 @@ bank_account2 = BankAccount.create!(
   )
 
 puts 'Seed: Finished seeding!'
+
+
+# real_estate2 = RealEstate.create!(
+#   address: "93 Palm Ave, Miami Beach, FL 33139, États-Unis",
+#   description: "Airbnb le Wagon",
+#   type_of: "Flat",
+#   category: "Principal residence",
+#   purchase_price: 50_000,
+#   floor_space: 100,
+#   year_of_construction: Date.new(2010, 11, 17),
+#   date_of_purchase: Date.new(2019, 12, 12),
+#   user: user1
+# )

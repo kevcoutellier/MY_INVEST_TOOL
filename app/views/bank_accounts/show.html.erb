@@ -1,12 +1,12 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
       <h1>Bank Account Details</h1>
+          </div>
+    </div>
       <p>Bank: <%= @bank_account.bank %></p>
       <p>Account number: <%= @bank_account.account_number %></p>
       <p>Type: <%= @bank_account.type_of %></p>
       <p>Balance: <%= @bank_account.balance %> <%= @bank_account.currency %></p>
-      <%= link_to 'Delete', bank_account_path(@bank_account), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ce compte ?" }, class: "btn btn-ghost"  %>
-        </div>
-    </div>
+      <%= link_to 'Delete', bank_account_path(@bank_account), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ce compte ?" }, class: "btn btn-flat"  %>
+
  </div>
