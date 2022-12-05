@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
+  <div class="cards">
+    <div class="card">
       <h1 class="h2 my-3 d-flex justify-content-center">My credits</h1>
         <br>
           <ul>
@@ -8,7 +8,7 @@
               <li><%= link_to liability.loan_name, liability_path(liability) %></li>
               <%end %>
           </ul>
-              <%= link_to "Add", new_liability_path, class: "btn btn-ghost"%>
+              <%= link_to "Add", new_liability_path, class: "add-bot"%>
       </div>
   </div>
 </div>
