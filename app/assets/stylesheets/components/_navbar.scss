@@ -8,13 +8,13 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #606679;
+  background: #000000;
   color: white;
   margin-right: 20px;
 }
 
 header {
-  background: #606679;
+  background:  #000000;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   position: sticky;
   display: flex;
@@ -71,7 +71,7 @@ header {
         top: 100%;
         left: 0;
         width: 150px;
-        background: #606679;
+        background:  #000000;
         display: flex;
         flex-direction: column;
         padding: 10px;
@@ -93,7 +93,7 @@ header {
     left: -100%;
     height: 100%;
     width: 200px;
-    background: #606679;
+    background:  #000000;
     padding: 20px;
     transition: left 250ms;
     top: 0;
