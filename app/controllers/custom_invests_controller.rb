@@ -5,14 +5,6 @@ class CustomInvestsController < ApplicationController
 
   def index
     @custom_invests = CustomInvest.all
-
-    # @markers = @custom_invests.geocoded.map do |custom_invest|
-    #   {
-    #     lat: custom_invest.latitude,
-    #     lng: custom_invest.longitude,
-    #     info_window: render_to_string(partial: "info_window", locals: {custom_invest: custom_invest})
-    #   }
-    # end
   end
 
   def new

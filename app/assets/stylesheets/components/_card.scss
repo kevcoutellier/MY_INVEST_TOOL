@@ -12,11 +12,12 @@
   color: rgb(0, 0, 0);
   border-radius: 15px;
   transition: box-shadow 250ms;
-  opacity: 0.2;
+  opacity: 0.5;
 
   &:hover{
     box-shadow: 0 0 15px rgb(255, 255, 255);
     opacity: 1;
+    transition: opacity 500ms;
   }
 
   a {
