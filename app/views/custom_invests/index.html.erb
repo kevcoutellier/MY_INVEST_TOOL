@@ -6,8 +6,13 @@
     <%if params[:query] == nil%>
     <div class="card">
       <%= link_to "", new_custom_invest_path, class: "add-bot"%>
-      <img src="https://res.cloudinary.com/dezfv3vmn/image/upload/v1668769399/samples/cloudinary-icon.png" alt="" class="card__img card__img--full">
-      <div>
+        <h3>GAINS</h3>
+        <h5>Total Gains : <%= CustomInvest.all_gain %> $</h5>
+        <br>
+        <h5>Total Unity_cost : <%= CustomInvest.all_unity_cost %> $</h5>
+        <h5>Total Actual_cost : <%= CustomInvest.all_actual_cost %> $</h5>
+      <div class="add_card_custom">
+
         <p><i class="fa-solid fa-plus"></i></p>
       </div>
     </div>
@@ -70,12 +75,7 @@
         <% end %>
       </div>
 
-      <div id="total" style="background: #606679;">
-      <h3>Recapitulatif</h3>
-      <p>Total Gains : <%= CustomInvest.all_gain %> $</p>
-      <p>Total Unity_cost : <%= CustomInvest.all_unity_cost %> $</p>
-      <p>Total Actual_cost : <%= CustomInvest.all_actual_cost %> $</p>
-      </div>
+
     </div>
   </div>
 </div>
