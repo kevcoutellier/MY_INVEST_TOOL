@@ -1,14 +1,16 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1 class="h2 my-3 d-flex justify-content-center">My credits</h1>
-        <br>
-          <ul>
-              <% @liabilities.each do |liability| %>
-              <li><%= link_to liability.loan_name, liability_path(liability) %></li>
-              <%end %>
-          </ul>
-              <%= link_to "Add", new_liability_path, class: "btn btn-ghost"%>
-      </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/5816291/pexels-photo-5816291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);">
+ <h1><strong>My credits</strong></h1>
+ <br>
+  <div class="container">
+<div>
+    <% @liabilities.each do |liability| %>
+    <p><%= link_to liability.loan_name, liability_path(liability) %></p>
+    <%end %>
+
+    </div>
+    <br>
+    <br>
+
+  <%= link_to "Add", new_liability_path, class: "btn btn-flat"%>
   </div>
 </div>

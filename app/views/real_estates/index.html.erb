@@ -1,21 +1,82 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <h1><center>Real Estate</center></h1>
-      <div style="width: 100%; height: 600px;"
-          data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-        <br>
-          <ul>
-              <% @real_estates.each do |real_estate| %>
-              <% if real_estate.photo.key  %>
-              <%= cl_image_tag real_estate.photo.key, height: 300, width: 400, crop: :fill %>
-              <% end %>
-              <li><%= link_to real_estate.address, real_estate_path(real_estate), class: "" %></li>
-              <%end %>
-          </ul>
-              <%= link_to "Add new", new_real_estate_path, class: "btn btn-ghost"%>
+  <div class="cards">
+    <%if params[:query] == nil%>
+    <div class="card">
+      <%= link_to "Add new real estate", new_real_estate_path, class: "add-bot"%>
+      <img src="https://images.pexels.com/photos/7078875/pexels-photo-7078875.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="card__img card__img--full">
+      <div>
+        <p>Add new</p>
       </div>
+    </div>
+    <% end %>
+    <% @real_estates.each do |real_estate| %>
+    <div class="card">
+          <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div>
+            <% if real_estate.photo.key  %>
+              <%= cl_image_tag real_estate.photo.key, class:"card__img", crop: :fill %>
+            <% end %>
+            </div>
+          </div>
+            <div class="swiper-slide" id="descrip">
+              <h2>Description</h2>
+              <p><%= real_estate.description %></p>
+              <p><%= real_estate.type_of %></p>
+              <p><%= real_estate.purchase_price %>$</p>
+              <p><%= real_estate.floor_space %>m²</p>
+            </div>
+            <div class="swiper-slide ">
+              <div style="width: 100%; height: 400px;" class="fixed-top"
+              data-controller="map"
+              data-map-markers-value="<%= [@markers.find{|marker| marker[:real_estate_id] == real_estate.id}].to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <div>
+            <%= link_to real_estate_path(real_estate), class:"card__link" do %>
+            <p><%= real_estate.description %></p>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div id="mapbox"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
   </div>
 </div>
+
+
+<script>
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  // direction: 'vertical',
+  loop: true,
+
+  // pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+</script>

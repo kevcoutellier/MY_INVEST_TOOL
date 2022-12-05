@@ -1,8 +1,14 @@
-<div class="container">
+<div class="container py-5">
   <div class="row">
-    <div class="col">
-      <article>
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+      <div class="cover mb-4 d-flex align-items-center justify-content-center">
+          <div class="text-center text-black">
+
         <h2> <%= @real_estate.description %></h2>
+    </div>
+</div>
+  <article>
           <p>Address: <%= @real_estate.address %></p>
           <p>Description: <%= @real_estate.description %></p>
           <p>Type: <%= @real_estate.type_of %></p>
@@ -17,10 +23,11 @@
           <%= cl_image_tag @real_estate.photo.key, height: 300, width: 400, crop: :fill %>
           <br>
           <br>
-          <%= link_to "Edit", edit_real_estate_path(@real_estate), class: "btn btn-ghost" %>
-          <%= link_to 'Delete', real_estate_path(@real_estate), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ce bien ?" },class: "btn btn-ghost"  %>
-          <%= link_to "Real Estate", real_estates_path,class: "btn btn-ghost"  %>
+          <%= link_to "Edit", edit_real_estate_path(@real_estate), class: "btn btn-flat" %>
+          <%= link_to 'Delete', real_estate_path(@real_estate), data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de vouloir supprimer ce bien ?" },class: "btn btn-flat"  %>
+          <%= link_to "Real Estate", real_estates_path,class: "btn btn-flat"  %>
         </article>
       </div>
     </div>
+  </div>
 </div>
