@@ -3,7 +3,7 @@
     require 'openssl'
 
 class RealEstatesController < ApplicationController
-  before_action :set_real_estate, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_real_estate, only: [ :show, :edit, :update, :destroy]
   def index
     @real_estates = RealEstate.all
     @markers = @real_estates.geocoded.map do |real_estate|

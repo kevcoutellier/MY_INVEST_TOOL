@@ -2,13 +2,18 @@
   <div class="cards">
     <%if params[:query] == nil%>
     <div class="card">
-      <%= link_to "Add new real estate", new_real_estate_path, class: "add-bot"%>
-      <img src="https://images.pexels.com/photos/7078875/pexels-photo-7078875.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="card__img card__img--full">
-      <div>
-        <p>Add new</p>
+      <%= link_to "", new_real_estate_path, class: "add-bot"%>
+        <h3>GAINS</h3>
+        <h5>Total Gains : <%= RealEstate.all_gain %> $</h5>
+        <br>
+        <h5>Total Unity_cost : <%= RealEstate.all_purchase_price %> $</h5>
+        <h5>Total Actual_cost : <%= RealEstate.all_estimation %> $</h5>
+      <div class="add_card_custom">
+        <p><i class="fa-solid fa-plus"></i></p>
       </div>
     </div>
     <% end %>
+
     <% @real_estates.each do |real_estate| %>
     <div class="card">
           <!-- Slider main container -->
@@ -25,10 +30,17 @@
           </div>
             <div class="swiper-slide" id="descrip">
               <h2>Description</h2>
-              <p><%= real_estate.description %></p>
-              <p><%= real_estate.type_of %></p>
-              <p><%= real_estate.purchase_price %>$</p>
-              <p><%= real_estate.floor_space %>m²</p>
+          <p>Address: <%= real_estate.address %></p>
+          <p>Description: <%= real_estate.description %></p>
+          <p>Type: <%= real_estate.type_of %></p>
+          <p>Category: <%= real_estate.category %></p>
+          <p>Purchase price: <%= real_estate.purchase_price %>€</p>
+          <p>Floor space: <%= real_estate.floor_space %>m²</p>
+          <p>Year of construction: <%= real_estate.year_of_construction %></p>
+          <p>Date of purchase: <%= real_estate.date_of_purchase %></p>
+          <p>Estimated price: <%= real_estate.estimation %>$</p>
+          <p>Total gains: <%= (real_estate.estimation - real_estate.purchase_price) if real_estate.estimation %>$</p>
+          <br>
             </div>
             <div class="swiper-slide ">
               <div style="width: 100%; height: 400px;" class="fixed-top"
