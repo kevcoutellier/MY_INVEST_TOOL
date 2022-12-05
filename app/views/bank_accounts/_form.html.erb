@@ -1,5 +1,5 @@
- <section>
- <h1>Add new bank account</h1>
+  <div class="container py-5 justify-content-center">
+  <div class="bg-white rounded p-3 shadow booking-real ">
       <%= simple_form_for(@bank_account) do |f| %>
       <%= f.input :bank, placeholder: "BNP Paribas"%>
       <%= f.input :account_number, placeholder: "FR2910096000702268451392M94" %>
@@ -8,4 +8,5 @@
       <%= f.input :currency, collection: BankAccount::CURRENCY %>
       <%= f.submit "Add", class: "btn btn-flat"%>
       <% end %>
-  </section>
+    </div>
+</div>

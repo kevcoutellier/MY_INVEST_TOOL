@@ -1,7 +1,5 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
+ <div class="container py-5 justify-content-center">
+  <div class="bg-white rounded p-3 shadow liabilities ">
         <%= simple_form_for(@liability) do |f| %>
         <%= f.input :loan_name, label:"Loan name", placeholder: "House"%>
         <%= f.input :type_of, collection: Liability::LOAN_TYPE, label:"Type"%>
