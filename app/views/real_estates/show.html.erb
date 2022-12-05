@@ -1,13 +1,8 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-      <div class="cover mb-4 d-flex align-items-center justify-content-center">
-          <div class="text-center text-black">
+ <div class="container py-5 justify-content-center">
+  <div class="bg-white rounded p-3 shadow booking-real ">
 
         <h2> <%= @real_estate.description %></h2>
-    </div>
-</div>
+
   <article>
           <p>Address: <%= @real_estate.address %></p>
           <p>Description: <%= @real_estate.description %></p>
@@ -18,7 +13,7 @@
           <p>Year of construction: <%= @real_estate.year_of_construction %></p>
           <p>Date of purchase: <%= @real_estate.date_of_purchase %></p>
           <p>Estimated price: <%= @real_estate.estimation %>$</p>
-          <p> <%= (@real_estate.estimation - @real_estate.purchase_price) if @real_estate.estimation %></p>
+          <p>Total gains: <%= (@real_estate.estimation - @real_estate.purchase_price) if @real_estate.estimation %>$</p>
           <br>
           <%= cl_image_tag @real_estate.photo.key, height: 300, width: 400, crop: :fill %>
           <br>

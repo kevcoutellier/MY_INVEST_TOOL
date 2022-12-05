@@ -13,4 +13,34 @@ class RealEstate < ApplicationRecord
   has_one_attached :photo
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+
+
+def gain
+  if self.estimation && self.purchase_price
+    (self.purchase_price - self.estimation)
+  end
+end
+
+def self.all_purchase_price
+  total = 0
+
+  self.all.each do |f|
+    total += f.purchase_price
+  end
+  total
+end
+
+def self.all_estimation
+  total = 0
+
+  self.all.each do |f|
+    total == f.estimation
+  end
+  total
+end
+
+def self.all_gain
+total = all_estimation - all_purchase_price
+end
 end
