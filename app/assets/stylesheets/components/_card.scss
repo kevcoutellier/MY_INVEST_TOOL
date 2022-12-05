@@ -12,9 +12,11 @@
   color: rgb(0, 0, 0);
   border-radius: 15px;
   transition: box-shadow 250ms;
+  opacity: 0.2;
 
   &:hover{
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    box-shadow: 0 0 15px rgb(255, 255, 255);
+    opacity: 1;
   }
 
   a {
@@ -23,6 +25,11 @@
     :hover{
       opacity: 0.5;
     }
+  }
+
+  h3 {
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 
   h4 {
@@ -103,16 +110,6 @@
   }
 }
 
-
-#total{
-
-  p{
-
-    text-decoration: none;
-    color: white;
-    opacity: 0.5;
-    &:hover{
-      opacity: 1;
-    }
-  }
+.add_card_custom{
+  margin-top: 100px;
 }
