@@ -1,10 +1,7 @@
  <div class="container py-5 justify-content-center">
   <div class="bg-white rounded p-3 shadow booking-real ">
       <%= simple_form_for [@real_estate] do |f| %>
-      <%= f.input :address,
-      input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-      wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}},
-      label: "Address", placeholder: "Please type the address here..." %>
+      <%= f.input :address, label: "Address", placeholder: "Please type the address here..." %>
       <%= f.input :description, label: "Description", placeholder: "Please type a short description here" %>
       <%= f.input :type_of, collection: RealEstate::TYPES,label: "Type:" %>
       <%= f.input :category, collection: RealEstate::CATEGORIES,label:"Category" %>
