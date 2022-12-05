@@ -1,14 +1,14 @@
-<div class="container">
-  <div class="row">
-    <div class="col"><h1>My credits</h1>
-      <p>Loan name: <%= @liability.loan_name %></p>
-      <p>Type: <%= @liability.type_of %></p>
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+  <br>
+    <h2>Loan name: <%= @liability.loan_name %></h2>
+  </div>
+</div>
+ <p>Type: <%= @liability.type_of %></p>
       <p>Total amount: <%= @liability.amount %>€</p>
       <p>Monthly payment: <%= @liability.monthly_payment %>€</p>
       <p>Interest rate: <%= @liability.interest_rate %>%</p>
       <p>Start date: <%= @liability.start_date %></p>
       <p>Duration: <%= @liability.duration %> months</p>
-      <%= link_to 'Delete', liability_path(@liability), data: { turbo_method: :delete, turbo_confirm: "Are you sure that you want to delete it ?" }, class: "btn btn-ghost"  %>
+     <div class="cover mb-4 d-flex align-items-center justify-content-center"> <%= link_to 'Delete', liability_path(@liability), data: { turbo_method: :delete, turbo_confirm: "Are you sure that you want to delete it ?" }, class: "btn btn-flat"  %>
      </div>
-  </div>
-</div>
