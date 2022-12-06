@@ -65,7 +65,7 @@ real_estate3 = RealEstate.new(
   type_of: "Flat",
   category: "Principal residence",
   purchase_price: 500_000,
-  purchase_price: 530_000,
+  estimatio: 540_000,
   floor_space: 100,
   year_of_construction: Date.new(2010, 11, 17),
   date_of_purchase: Date.new(2019, 12, 12),
