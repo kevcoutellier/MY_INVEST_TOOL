@@ -6,8 +6,9 @@ import { navbar } from "./components/navbar"
 
 // import { swiperCard } from "./components/swiper_card"
 
-import { donut } from "./components/donut"
-
+import { donut } from "./components/chart"
+import { bars } from "./components/chart2"
 
 navbar();
 donut();
+bars()

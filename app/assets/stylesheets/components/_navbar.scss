@@ -17,6 +17,7 @@ header {
   background:  #000000;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   position: sticky;
+  justify-content: center;
   display: flex;
   align-items: center;
   top: 0;
@@ -30,19 +31,20 @@ header {
   }
 }
 
-.search {
-  position: absolute;
-  right: 20px;
-  top: 40px;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-}
+// .search {
+//   position: absolute;
+//   right: 20px;
+//   top: 40px;
+//   height: 40px;
+//   width: 40px;
+//   border-radius: 50%;
+//   overflow: hidden;
+// }
 .nav-main {
   a{
     text-decoration: none;
     color: white;
+    font-size: 30px;
     opacity: 0.5;
     &:hover{
       opacity: 1;
@@ -57,7 +59,7 @@ header {
 
     li {
       position: relative;
-      padding: 0 20px 0 0;
+      padding: 10px 20px 0 20px;
 
       &:hover {
         > ul {
