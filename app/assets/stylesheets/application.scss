@@ -30,6 +30,8 @@ body{
 }
 
 .corps{
+  display: flex;
+  flex-direction: column;
   width:90%;
   min-height: 100vh;
   //  height: 80%;

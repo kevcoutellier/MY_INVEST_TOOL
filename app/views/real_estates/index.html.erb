@@ -5,7 +5,7 @@
       <%= link_to "", new_real_estate_path, class: "add-bot"%>
       <div class="title-custom">
         <h3>GAINS</h3>
-          </div>
+      </div>
         <h5>Total Gains : <%= RealEstate.all_gain %> $</h5>
         <br>
         <h5>Total Unity cost : <%= RealEstate.all_purchase_price %> $</h5>
@@ -15,72 +15,61 @@
       </div>
     </div>
     <% end %>
-
     <% @real_estates.each do |real_estate| %>
     <div class="card">
-          <!-- Slider main container -->
       <div class="swiper">
-        <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
-          <!-- Slides -->
           <div class="swiper-slide">
-            <div>
             <% if real_estate.photo.key  %>
-              <%= cl_image_tag real_estate.photo.key, class:"card__img", crop: :fill %>
+            <%= cl_image_tag real_estate.photo.key, class:"card__img", crop: :fill %>
             <% end %>
-            </div>
           </div>
-            <div class="swiper-slide" id="descrip">
-              <h2>Description</h2>
-          <p>Address: <%= real_estate.address %></p>
-          <p>Description: <%= real_estate.description %></p>
-          <p>Type: <%= real_estate.type_of %></p>
-          <p>Category: <%= real_estate.category %></p>
-          <p>Purchase price: <%= real_estate.purchase_price %>€</p>
-          <p>Floor space: <%= real_estate.floor_space %>m²</p>
-          <p>Year of construction: <%= real_estate.year_of_construction %></p>
-          <p>Date of purchase: <%= real_estate.date_of_purchase %></p>
-          <p>Estimated price: <%= real_estate.estimation %>$</p>
-          <p>Total gains: <%= real_estate.gain if real_estate.estimation %>$</p>
-          <br>
-            </div>
-            <div class="swiper-slide ">
-              <div style="width: 100%; height: 400px;" class="fixed-top"
+          <div class="swiper-slide" id="descrip">
+            <h2>Description</h2>
+            <p>Address: <%= real_estate.address %></p>
+            <p>Description: <%= real_estate.description %></p>
+            <p>Type: <%= real_estate.type_of %></p>
+            <p>Category: <%= real_estate.category %></p>
+            <p>Purchase price: <%= real_estate.purchase_price %>€</p>
+            <p>Floor space: <%= real_estate.floor_space %>m²</p>
+            <p>Year of construction: <%= real_estate.year_of_construction %></p>
+            <p>Date of purchase: <%= real_estate.date_of_purchase %></p>
+            <p>Estimated price: <%= real_estate.estimation %>$</p>
+            <p>Total gains: <%= real_estate.gain if real_estate.estimation %>$</p>
+            <br>
+          </div>
+          <div class="swiper-slide">
+            <div style="width: 100%; height: 400px;" class="fixed-top"
               data-controller="map"
               data-map-markers-value="<%= [@markers.find{|marker| marker[:real_estate] == real_estate.id}].to_json %>"
-              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
               <%  %>
-              </div>
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
           </div>
-          <div class="bottom-card">
-          <p><strong><%= real_estate.description %></strong></p>
-          <p>
-          <%= link_to edit_real_estate_path(real_estate) do %>
-            <i class="fa-solid fa-pen-to-square"></i>
-            <% end %>
-            </p>
-            <p>
-            <%= link_to real_estate_path(real_estate), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  do %>
-            <i class="fa-solid fa-trash"></i>
-              <% end %>
-                  </p>
-          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
-        <% end %>
       </div>
-      <div id="mapbox"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="bottom-card">
+        <p><strong><%= real_estate.description %></strong></p>
+        <p>
+        <%= link_to edit_real_estate_path(real_estate) do %>
+        <i class="fa-solid fa-pen-to-square"></i>
+        <% end %>
+        <p>
+          <%= link_to real_estate_path(real_estate), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  do %>
+          <i class="fa-solid fa-trash"></i>
+          <% end %>
+        </p>
       </div>
     </div>
+      <% end %>
+  </div>
+  <div id="mapbox"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
 
