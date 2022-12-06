@@ -7,4 +7,11 @@ class BankAccount < ApplicationRecord
   validates :type_of, presence: true, inclusion: { in: TYPES }
   validates :balance, presence: true
   validates :currency, presence: true, inclusion: { in: CURRENCY }
+
+
+  def self.all_bank
+    bank_accounts = BankAccount.all
+    total_bank = bank_accounts.pluck(:balance).compact.sum
+
+  end
 end
