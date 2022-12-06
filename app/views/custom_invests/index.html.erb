@@ -6,16 +6,17 @@
     <%if params[:query] == nil%>
     <div class="card">
       <%= link_to "", new_custom_invest_path, class: "add-bot"%>
-        <h3>GAINS</h3>
+        <h3>GAINS CUSTOM</h3>
         <h5>Total Gains : <%= CustomInvest.all_gain %> $</h5>
-        <br>
         <h5>Total Unity_cost : <%= CustomInvest.all_unity_cost %> $</h5>
         <h5>Total Actual_cost : <%= CustomInvest.all_actual_cost %> $</h5>
       <div class="add_card_custom">
+
         <p><i class="fa-solid fa-plus"></i></p>
       </div>
     </div>
     <% end %>
+
     <% @custom_invests.each do |custom_invest| %>
     <div class="card">
           <!-- Slider main container -->
@@ -72,6 +73,8 @@
         </div>
         <% end %>
       </div>
+
+
     </div>
   </div>
 </div>

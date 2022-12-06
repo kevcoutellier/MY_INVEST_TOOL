@@ -5,20 +5,27 @@
     <%if params[:query] == nil%>
     <div class="card">
       <%= link_to "", new_bank_account_path, class: "add-bot"%>
+      <h3>GAINS BANK</h3>
+        <h5>Total : <%= BankAccount.all_bank %> $</h5>
+          <% @bank_accounts.each do |bank_account| %>
+          <p> <%= bank_account.bank %> <%= bank_account.balance %> $</p>
+          <% end %>
       <div class="add_card_custom">
         <p><i class="fa-solid fa-plus"></i></p>
       </div>
     </div>
       <% end %>
       <% @bank_accounts.each do |bank_account| %>
-    <div class="card">
-      <p><%= bank_account.bank %></p>
-        <p>Account : <%= bank_account.account_number %></p>
-          <p>Type Of : <%= bank_account.type_of %> u</p>
-        <p>Balance : <%= bank_account.balance %> $</p>
-      <p>Currency : <%= bank_account.currency %> </p>
+    <div class="card" id="descrip">
+      <h2><%= bank_account.bank %></h2>
+        <p><%= bank_account.account_number %></p>
+          <p>Balance : <%= bank_account.balance %> $</p>
+            <p>Currency : <%= bank_account.currency %> </p>
+              <p></p>
+            <p></p>
+          <p></p>
+        <p></p>
       <div class="bottom-card">
-        <p><strong><%= bank_account.bank %></strong></p>
           <p>
             <%= link_to edit_bank_account_path(bank_account) do %>
               <i class="fa-solid fa-pen-to-square"></i>
@@ -55,4 +62,3 @@ const swiper = new Swiper('.swiper', {
   },
 });
 </script>
-
