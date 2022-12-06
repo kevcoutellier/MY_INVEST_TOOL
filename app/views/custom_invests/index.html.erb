@@ -6,80 +6,65 @@
     <%if params[:query] == nil%>
     <div class="card">
       <%= link_to "", new_custom_invest_path, class: "add-bot"%>
-        <div class="title-custom">
-          <h3>GAINS CUSTOM</h3>
-        </div>
+      <div class="title-custom">
+        <h3>GAINS CUSTOM</h3>
+      </div>
         <h5>Total Gains : <%= CustomInvest.all_gain %> $</h5>
         <h5>Total Unity cost : <%= CustomInvest.all_unity_cost %> $</h5>
         <h5>Total Actual cost : <%= CustomInvest.all_actual_cost %> $</h5>
       <div class="add_card_custom">
-
         <p><i class="fa-solid fa-plus"></i></p>
       </div>
     </div>
-    <% end %>
-
-    <% @custom_invests.each do |custom_invest| %>
+      <% end %>
+      <% @custom_invests.each do |custom_invest| %>
     <div class="card">
-          <!-- Slider main container -->
       <div class="swiper">
-        <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
-          <!-- Slides -->
           <div class="swiper-slide">
             <div>
-            <% if custom_invest.photo.key  %>
+              <% if custom_invest.photo.key  %>
               <%= cl_image_tag custom_invest.photo.key, class:"card__img" %>
-            <% end %>
-              <%#= cl_image_tag custom_invest.photo.key, class:"card__img", crop: :fill %>
+              <% end %>
             </div>
           </div>
-            <div class="swiper-slide" id="descrip">
-              <h2>Détails</h2>
+          <div class="swiper-slide" id="descrip">
+            <h2>Détails</h2>
               <p>Type : <%= custom_invest.category %></p>
               <p>Quantity : <%= custom_invest.quantity %> u</p>
               <p>Unity_cost : <%= custom_invest.unity_cost %> $</p>
               <p>Actual_cost : <%= custom_invest.actual_cost %> $</p>
-
-             <% if custom_invest.actual_cost && custom_invest.unity_cost %>
+              <% if custom_invest.actual_cost && custom_invest.unity_cost %>
               <p>Gain : <%= custom_invest.gain %> $</p>
-             <% end %>
-            </div>
-            <div class="swiper-slide" id="descrip">
-              <h2>Description</h2>
-              <p><%= custom_invest.description %></p>
-
-            </div>
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-          <div class="bottom-card">
-            <%# <%= link_to custom_invest_path(custom_invest), class:"card__link" do %>
-            <p><strong><%= custom_invest.name %></strong></p>
-            <p>
-            <%= link_to edit_custom_invest_path(custom_invest) do %>
-            <i class="fa-solid fa-pen-to-square"></i>
             <% end %>
-            </p>
-            <p>
-            <%= link_to custom_invest_path(custom_invest), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  do %>
-            <i class="fa-solid fa-trash"></i>
-            <% end %>
-            </p>
           </div>
+          <div class="swiper-slide" id="descrip">
+            <h2>Description</h2>
+            <p><%= custom_invest.description %></p>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
-        <% end %>
       </div>
-
-
+      <div class="bottom-card">
+        <p><strong><%= custom_invest.name %></strong></p>
+        <p>
+        <%= link_to edit_custom_invest_path(custom_invest) do %>
+        <i class="fa-solid fa-pen-to-square"></i>
+        <% end %>
+        </p>
+        <p>
+        <%= link_to custom_invest_path(custom_invest), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  do %>
+        <i class="fa-solid fa-trash"></i>
+        <% end %>
+        </p>
+      </div>
     </div>
+    <% end %>
   </div>
 </div>
+
 
 
 <script>

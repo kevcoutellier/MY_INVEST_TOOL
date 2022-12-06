@@ -26,7 +26,6 @@ custom_invest.photo.attach(io: file, filename: "nike-futur.jpg", content_type: "
 custom_invest.save
 
 
-
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669801293/my_invest/appartement-photo_cavo34.jpg")
 real_estate = RealEstate.new(
   address: "11 Palm Ave, Miami Beach, FL 33139, États-Unis",
