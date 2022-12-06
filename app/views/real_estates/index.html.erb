@@ -39,13 +39,13 @@
           <p>Year of construction: <%= real_estate.year_of_construction %></p>
           <p>Date of purchase: <%= real_estate.date_of_purchase %></p>
           <p>Estimated price: <%= real_estate.estimation %>$</p>
-          <p>Total gains: <%= (real_estate.estimation - real_estate.purchase_price) if real_estate.estimation %>$</p>
+          <p>Total gains: <%= real_estate.gain if real_estate.estimation %>$</p>
           <br>
             </div>
             <div class="swiper-slide ">
               <div style="width: 100%; height: 400px;" class="fixed-top"
               data-controller="map"
-              data-map-markers-value="<%= [@markers.find{|marker| marker[:real_estate_id] == real_estate.id}].to_json %>"
+              data-map-markers-value="<%= [@markers.find{|marker| marker[:real_estate] == real_estate.id}].to_json %>"
               data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
               <%  %>
               </div>
