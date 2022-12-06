@@ -65,7 +65,7 @@ real_estate3 = RealEstate.new(
   type_of: "Flat",
   category: "Principal residence",
   purchase_price: 500_000,
-  estimatio: 540_000,
+  estimation: 540_000,
   floor_space: 100,
   year_of_construction: Date.new(2010, 11, 17),
   date_of_purchase: Date.new(2019, 12, 12),
@@ -74,8 +74,8 @@ real_estate3 = RealEstate.new(
 real_estate3.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
 real_estate3.save
 
-
-bank_account = BankAccount.create!(
+file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1670336813/my_invest/Logo-BNP-Paribas_nyo21v.jpg")
+bank_account = BankAccount.new(
   bank: "BNP Paribas",
   account_number: "FR3530003000704398932537S50",
   type_of: "Current account",
@@ -83,6 +83,11 @@ bank_account = BankAccount.create!(
   currency: "USD",
   user: user
 )
+bank_account.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+bank_account.save
+
+
+
 
 # bank_account2 = BankAccount.create!(
 #   bank: "BNP Paribas",
@@ -93,14 +98,20 @@ bank_account = BankAccount.create!(
 #   user: user
 # )
 
-  bank_account3 = BankAccount.create!(
-    bank: "Société Générale",
-    account_number: "FR4217569000301711585427S64",
-    type_of: "Current account",
-    balance: 14_265,
-    currency: "USD",
-    user: user1
-  )
+
+file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1670336802/my_invest/societe_generale_ejdfd3.png")
+bank_account3 = BankAccount.new(
+  bank: "Société Générale",
+  account_number: "FR4217569000301711585427S64",
+  type_of: "Current account",
+  balance: 14_265,
+  currency: "USD",
+  user: user1
+)
+bank_account3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+bank_account3.save
+
+
 
   # bank_account4 = BankAccount.create!(
   #   bank: "Société Générale",
@@ -111,14 +122,19 @@ bank_account = BankAccount.create!(
   #   user: user1
   # )
 
-  bank_account5 = BankAccount.create!(
-    bank: "Crédit Mutuel",
-    account_number: "FR2510096000403743519222V21",
-    type_of: "Current account",
-    balance: 8500,
-    currency: "USD",
-    user: user2
-  )
+file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1670336807/my_invest/t%C3%A9l%C3%A9chargement_3_qgihfd.png")
+bank_account5 = BankAccount.new(
+  bank: "Crédit Mutuel",
+  account_number: "FR2510096000403743519222V21",
+  type_of: "Current account",
+  balance: 8500,
+  currency: "USD",
+  user: user2
+)
+bank_account5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+bank_account5.save
+
+
 
   # bank_account6 = BankAccount.create!(
   #   bank: "Crédit Mutuel",

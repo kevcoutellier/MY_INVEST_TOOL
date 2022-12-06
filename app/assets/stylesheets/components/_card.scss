@@ -91,9 +91,9 @@
   text-align: center;
 
 
-  h2{
-    background-color: #F4F4F4;
-  }
+  // h2{
+  //   background-color: #F4F4F4;
+  // }
 
   p{
     margin-top: 20px;
@@ -113,4 +113,25 @@
 
 .add_card_custom{
   margin-top: 100px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // border-radius: 5px O O O;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.title-custom {
+  border-bottom: solid;
+  margin-bottom: 30px;
+
 }

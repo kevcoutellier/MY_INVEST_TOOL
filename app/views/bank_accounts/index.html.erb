@@ -5,7 +5,9 @@
     <%if params[:query] == nil%>
     <div class="card">
       <%= link_to "", new_bank_account_path, class: "add-bot"%>
+      <div class="title-custom">
       <h3>GAINS BANK</h3>
+       </div>
         <h5>Total : <%= BankAccount.all_bank %> $</h5>
           <% @bank_accounts.each do |bank_account| %>
           <p> <%= bank_account.bank %> <%= bank_account.balance %> $</p>
@@ -17,14 +19,13 @@
       <% end %>
       <% @bank_accounts.each do |bank_account| %>
     <div class="card" id="descrip">
-      <h2><%= bank_account.bank %></h2>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path bank_account.photo.key, crop: :fill %>')">
+        <h2><%= bank_account.bank %></h2>
+      </div>
         <p><%= bank_account.account_number %></p>
           <p>Balance : <%= bank_account.balance %> $</p>
             <p>Currency : <%= bank_account.currency %> </p>
-              <p></p>
-            <p></p>
-          <p></p>
-        <p></p>
+
       <div class="bottom-card">
           <p>
             <%= link_to edit_bank_account_path(bank_account) do %>
