@@ -77,54 +77,54 @@ bank_account = BankAccount.create!(
   account_number: "FR3530003000704398932537S50",
   type_of: "Current account",
   balance: 13_531,
-  currency: "EUR",
+  currency: "USD",
   user: user
 )
 
-bank_account2 = BankAccount.create!(
-  bank: "BNP Paribas",
-  account_number: "FR5010096000706258456462I21",
-  type_of: "Savings account",
-  balance: 8767,
-  currency: "EUR",
-  user: user
-)
+# bank_account2 = BankAccount.create!(
+#   bank: "BNP Paribas",
+#   account_number: "FR5010096000706258456462I21",
+#   type_of: "Savings account",
+#   balance: 8767,
+#   currency: "USD",
+#   user: user
+# )
 
   bank_account3 = BankAccount.create!(
     bank: "Société Générale",
     account_number: "FR4217569000301711585427S64",
     type_of: "Current account",
     balance: 14_265,
-    currency: "EUR",
+    currency: "USD",
     user: user1
   )
 
-  bank_account4 = BankAccount.create!(
-    bank: "Société Générale",
-    account_number: "FR4217569000301711585427S64",
-    type_of: "Savings account",
-    balance: 2500,
-    currency: "EUR",
-    user: user1
-  )
+  # bank_account4 = BankAccount.create!(
+  #   bank: "Société Générale",
+  #   account_number: "FR4217569000301711585427S64",
+  #   type_of: "Savings account",
+  #   balance: 2500,
+  #   currency: "USD",
+  #   user: user1
+  # )
 
   bank_account5 = BankAccount.create!(
     bank: "Crédit Mutuel",
     account_number: "FR2510096000403743519222V21",
     type_of: "Current account",
     balance: 8500,
-    currency: "EUR",
+    currency: "USD",
     user: user2
   )
 
-  bank_account6 = BankAccount.create!(
-    bank: "Crédit Mutuel",
-    account_number: "FR2510096000403743519222V21",
-    type_of: "Savings account",
-    balance: 10_500,
-    currency: "EUR",
-    user: user2
-  )
+  # bank_account6 = BankAccount.create!(
+  #   bank: "Crédit Mutuel",
+  #   account_number: "FR2510096000403743519222V21",
+  #   type_of: "Savings account",
+  #   balance: 10_500,
+  #   currency: "USD",
+  #   user: user2
+  # )
 
 puts 'Seed: Finished seeding!'
 
