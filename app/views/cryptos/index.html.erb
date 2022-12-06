@@ -4,22 +4,23 @@
   <marquee>
     <div class="crypto-news-feed">
       <% @response.each do |response| %>
-        <p><div><%= response["symbol"] %>=</div>
-        <div><%= response["last"].to_f.round(2) %>$</div>
-        <div>24H%=<%= response["daily_change_percentage"].to_f.round(2) %></div></p>
+        <p><div class ="crypto-news-feed-symbol"><%= response["symbol"] %>=</div>
+        <div class = "crypto-news-feed-last"><%= response["last"].to_f.round(2) %>$</div>
+        <div class = "crypto-news-feed-daily_change_percentage">24H  = <span class = <%= response["daily_change_percentage"].to_f.round(2) >= 0 ? "crypto-pos" : "crypto-neg"  %>  ><%= response["daily_change_percentage"].to_f.round(2) %>%</span></div></p>
       <% end %>
     </div>
   </marquee>
+
 <div class="container" id="crypto">
 <%# INDEX INFOS %>
   <div class="en-tete">
-    <h1>Mes cryptos</h1>
+    <h1>My cryptos</h1>
 
 <%# INDEX CRYPTO %>
 <% @total = 0 %>
   <div class="crypto-index">
     <% @cryptos.each do |crypto| %>
-      <div>
+      <div class = "crypto-index">
         <%= link_to crypto.name, crypto_path(crypto), class: "crypto_id" %>
         <% wallet_amount = crypto.quantity * @crypto_sorted["ethereum"]["usd"].to_i  %>
         <% @total += wallet_amount %>
@@ -30,7 +31,7 @@
         <%= link_to 'Delete', crypto_path(crypto) , class:"", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
     <% end %>
   </div>
-  <%= link_to "Ajouter un nouveau wallet", new_crypto_path, class: "" %>
+  <%= link_to "Add a wallet", new_crypto_path, class: "" %>
 
     <p>Total = <%= @total.round(2) %>($)</p>
   </div>
@@ -43,24 +44,24 @@
 <%# CLASSEMENT CRYPTO %>
   <table class="table">
     <thead>
-      <tr>
+      <tr class = "colonne-tableau">
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Price($USD)</th>
         <th scope="col">Market Cap ($USD)</th>
         <th scope="col">24h Volume ($USD)</th>
-        <th scope="col">24h Variation  (%)</th>
+        <th scope="col">24h Variation</th>
       </tr>
     </thead>
     <tbody>
   <% @crypto_sorted.keys.each_with_index do |key, index| %>
       <tr>
         <th scope="row"><%= index+1 %></th>
-        <td><%= key %> </td>
-        <td> <%= @crypto_user[key]["usd"] %> </td>
-    <td> <%= @crypto_user[key]["usd_market_cap"] %> </td>
-    <td> <%= @crypto_user[key]["usd_24h_vol"] %> </td>
-    <td> <%= @crypto_user[key]["usd_24h_change"] %> </td>
+        <td><%= key.capitalize %> </td>
+        <td> <%= @crypto_user[key]["usd"] %>$</td>
+    <td> <%= @crypto_user[key]["usd_market_cap"].to_f.round(2) %> </td>
+    <td> <%= @crypto_user[key]["usd_24h_vol"].to_f.round(2) %> </td>
+    <td> <span class = <%= @crypto_user[key]["usd_24h_change"].to_f.round(2) >= 0 ? "crypto-pos" : "crypto-neg"  %>><%= @crypto_user[key]["usd_24h_change"].to_f.round(2) %> %</span></td>
       </tr>
   <% end %>
     </tbody>
