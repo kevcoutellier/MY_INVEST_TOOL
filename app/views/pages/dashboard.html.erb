@@ -1,15 +1,23 @@
 <div class="dashboard">
   <div>
+  </div>
+  <div>
+  </div>
+  <div>
     <canvas id="myChart" data-controller="donut"
     data-custom=<%= CustomInvest.all_gain %>
-    data-bank=<%= CustomInvest.all_gain %>
+    data-bank=<%= BankAccount.all_bank %>
+    data-crypto=<%= Crypto.all %>
+    date-real=<%= RealEstate.all_gain %>
     >
     </canvas>
   </div>
   <div>
     <canvas id="myChart2" data-controller="donut"
     data-custom=<%= CustomInvest.all_gain %>
-    data-bank=<%= CustomInvest.all_gain %>
+    data-bank=<%= BankAccount.all_bank %>
+    data-crypto=<%= Crypto.all %>
+    date-real=<%= RealEstate.all_gain %>
     >
     </canvas>
   </div>
