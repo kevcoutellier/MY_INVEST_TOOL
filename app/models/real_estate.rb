@@ -14,33 +14,26 @@ class RealEstate < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-
-
 def gain
   if self.estimation && self.purchase_price
-    (self.purchase_price - self.estimation)
+    (self.estimation - self.purchase_price)
   end
 end
 
 def self.all_purchase_price
-  total = 0
-
-  self.all.each do |f|
-    total += f.purchase_price
-  end
-  total
+  real_estates = RealEstate.all
+  total_price = real_estates.pluck(:purchase_price).sum
 end
 
 def self.all_estimation
-  total = 0
-
-  self.all.each do |f|
-    total == f.estimation
-  end
-  total
+  real_estates = RealEstate.all
+  total_estimation = real_estates.pluck(:estimation).compact.sum
 end
 
 def self.all_gain
-total = all_estimation - all_purchase_price
+  real_estates = RealEstate.all
+  total_price = real_estates.pluck(:purchase_price).sum
+  total_estimation = real_estates.pluck(:estimation).compact.sum
+  total = total_estimation - total_price
 end
 end
