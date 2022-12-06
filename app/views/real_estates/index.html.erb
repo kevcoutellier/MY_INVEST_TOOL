@@ -3,11 +3,13 @@
     <%if params[:query] == nil%>
     <div class="card">
       <%= link_to "", new_real_estate_path, class: "add-bot"%>
+      <div class="title-custom">
         <h3>GAINS</h3>
+         </div>
         <h5>Total Gains : <%= RealEstate.all_gain %> $</h5>
         <br>
-        <h5>Total Unity_cost : <%= RealEstate.all_purchase_price %> $</h5>
-        <h5>Total Actual_cost : <%= RealEstate.all_estimation %> $</h5>
+        <h5>Total Unity cost : <%= RealEstate.all_purchase_price %> $</h5>
+        <h5>Total Actual cost : <%= RealEstate.all_estimation %> $</h5>
       <div class="add_card_custom">
         <p><i class="fa-solid fa-plus"></i></p>
       </div>
@@ -57,10 +59,18 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
           </div>
-          <div>
-            <%= link_to real_estate_path(real_estate), class:"card__link" do %>
-            <p><%= real_estate.description %></p>
+          <div class="bottom-card">
+          <p><strong><%= real_estate.description %></strong></p>
+          <p>
+          <%= link_to edit_real_estate_path(real_estate) do %>
+            <i class="fa-solid fa-pen-to-square"></i>
             <% end %>
+            </p>
+            <p>
+            <%= link_to real_estate_path(real_estate), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  do %>
+            <i class="fa-solid fa-trash"></i>
+              <% end %>
+                  </p>
           </div>
         </div>
         <% end %>
