@@ -16,31 +16,28 @@
 <%# INDEX INFOS %>
   <div class="en-tete">
     <h1>My cryptos</h1>
+  <%= link_to "Add a wallet", new_crypto_path, class: "" %>
 
 <div class = "container" id = "crypto-index">
 <%# INDEX CRYPTO %>
 <% @total = 0 %>
-  <div class="crypto-index">
+
     <% @cryptos.each do |crypto| %>
       <div class = "crypto">
         <div class = "crypto-name"><%= link_to crypto.name, "#", class: "crypto_id" %></div>
         <div class = "crypto-amount"><% wallet_amount = crypto.quantity * @crypto_sorted["ethereum"]["usd"].to_i  %></div>
         <div class = "crypto-total"><% @total += wallet_amount %></div>
         <p><%= crypto.quantity.round(2) %> ETH    <%= wallet_amount.round(2)  %> $</p>
-
+        <div class = "crypto-link">
         <%= link_to "Edit", edit_crypto_path(crypto), class:""  %>
-        <%= link_to 'Delete', crypto_path(crypto) , class:"", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
+        <%= link_to 'Delete', crypto_path(crypto) ,  data: { method: :delete, confirm: "Are you sure ?" }  %>
+        </div>
       </div>
     <% end %>
-  </div>
+
 
 </div>
-  <%= link_to "Add a wallet", new_crypto_path, class: "" %>
-    <p>Total = <%= @total.round(2) %>($)</p>
-  </div>
-<%# DIAGRAMME CRYPTO %>
-  <div class="crypto-donut">
-    <%# donut %>
+    <h3>Total = <%= @total.round(2) %>$</h3>
   </div>
 
 <%# CLASSEMENT CRYPTO %>
