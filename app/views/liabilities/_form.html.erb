@@ -9,7 +9,7 @@
         <%= f.input :start_date, as: :date, start_year: Date.today.year - 30,
         end_year: Date.today.year, discard_day: true, order: [:month, :year], label:"Start date" %>
         <%= f.input :duration, label:"Duration", placeholder: "180 months" %>
-        <%= f.submit "Submit", class: "btn btn-flat"%>
+        <%= f.submit "Submit", class: "btn-form"%>
         <% end %>
       </div>
     </div>
