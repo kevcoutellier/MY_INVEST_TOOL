@@ -1,0 +1,19 @@
+.dashboard {
+  display: flex;
+  #myChart{
+    width: 300px;
+    height: 300px;
+  }
+  #myChart2{
+    width: 300px;
+    height: 300px;
+  }
+}
+.diags {
+  flex-grow: 1;
+  display: grid;
+  align-items: flex-end;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+  }
