@@ -18,6 +18,15 @@
   a{
     color: white;
   }
+  display: block;
+}
+
+#crypto-index{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  flex-grow: 1;
+
 }
 
 /*Smallest device*/
