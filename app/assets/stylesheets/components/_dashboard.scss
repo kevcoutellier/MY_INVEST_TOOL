@@ -1,19 +1,71 @@
 .dashboard {
-  display: flex;
+  display: grid;
+  grid-template-areas:
+            "a b"
+            "a c";
+  .mychart1{
+    grid-area: a;
+  }
+  .mychart2{
+    grid-area: c;
+  }
   #myChart{
     width: 300px;
     height: 300px;
   }
   #myChart2{
-    width: 300px;
+    width: 150px;
     height: 300px;
   }
 }
 .diags {
-  flex-grow: 1;
-  display: grid;
-  align-items: flex-end;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+
   grid-gap: 16px;
   padding: 16px;
+  }
+.diag{
+
+  display: flex;
+  align-items: flex-end;
+}
+.blocks{
+  grid-area: b;
+  display: flex;
+}
+.block{
+  background-color: rgb(0, 0, 0);
+  height: 300px;
+  width: 200px;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  border-radius: 15px;
+  transition: box-shadow 250ms;
+  opacity: 0.5;
+  margin: 20px;
+  text-align: center;
+
+
+  &:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 15px rgb(255, 255, 255);
+    opacity: 1;
+    transition: opacity 1000ms;
+  }
+
+  h5{
+    padding-top: 5px;
+  }
+
+  h6{
+    padding-top: 5px;
+    padding-bottom: 15px;
+  }
+
+  p{
+    color:rgb(0, 0, 0);
+    margin-top: 0px;
+
+  }
   }

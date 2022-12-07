@@ -8,4 +8,9 @@ class User < ApplicationRecord
   has_many :custom_invests, dependent: :destroy
   has_many :bank_accounts, dependent: :destroy
   has_many :liabilities, dependent: :destroy
+
+  def self.all_gain
+    total = 0
+    total = Crypto.all_gain + RealEstate.all_gain + CustomInvest.all_gain + BankAccount.all_bank
+  end
 end
