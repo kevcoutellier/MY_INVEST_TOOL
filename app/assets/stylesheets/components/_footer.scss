@@ -3,9 +3,11 @@
   align-items: center;
   justify-content: space-between;
   color: white;
+  height: 60px;
   padding: 36px;
   margin-top: 24px;
-  background-color: #000000;
+  background: linear-gradient(to top, rgb(61, 61, 61), 10%, rgb(0, 0, 0));
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
   margin-top: auto;
 }
 .footer-links {
@@ -28,13 +30,3 @@
 .footer-copyright{
   opacity: 0.5;
 }
-// #newbottom
-// {
-// clear: both;
-// margin: auto;
-// width: 100%;
-// background-image: url('app/assets/images/MI.png');
-// background-repeat: no-repeat;
-// background-position: center;
-// height: 500px;
-// }
