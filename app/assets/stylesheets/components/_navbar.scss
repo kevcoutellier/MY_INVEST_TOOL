@@ -8,14 +8,13 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000000;
   color: white;
   margin-right: 20px;
 }
 
 header {
-  background:  #000000;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  background: linear-gradient(to bottom, rgb(61, 61, 61), 10%, rgb(0, 0, 0));
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   position: sticky;
   justify-content: center;
   display: flex;
@@ -25,10 +24,7 @@ header {
   height: 60px;
   padding-bottom: 50px;
   padding-top: 30px;
-
-  &:hover{
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-  }
+  margin-bottom: 70px;
 }
 
 // .search {
@@ -146,6 +142,61 @@ header {
     text-decoration: none;
     color: white;
     opacity: 0.5;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+#yellow{
+  a{
+    text-decoration: none;
+    color: #FFFE50;
+    font-size: 30px;
+    opacity: 0.5;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+#pink{
+  a{
+    text-decoration: none;
+    color: #F11CB5;
+    font-size: 30px;
+    opacity: 0.7;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+#blue{
+  a{
+    text-decoration: none;
+    color: #74EEEA;
+    font-size: 30px;
+    opacity: 0.7;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+#red{
+  a{
+    text-decoration: none;
+    color: #F76865;
+    font-size: 30px;
+    opacity: 0.7;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+#green{
+  a{
+    text-decoration: none;
+    color: #00FF01;
+    font-size: 30px;
+    opacity: 0.7;
     &:hover{
       opacity: 1;
     }
