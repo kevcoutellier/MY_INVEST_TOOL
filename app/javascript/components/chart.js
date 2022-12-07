@@ -18,7 +18,7 @@ export const donut = () => {
           label: '$',
           data: [totalCrypto, totalReal, totalCustom, totalBank],
           borderWidth: 1,
-          backgroundColor: ["#ED4D6E","#F07575", "#00DF00", "#0F19EB" ]
+          backgroundColor: ["#FFFE50","#F11CB5","#74EEEA","#F76865"]
         }],
       },
       options: {
