@@ -58,7 +58,7 @@
         <i class="fa-solid fa-pen-to-square"></i>
         <% end %>
         <p>
-          <%= link_to real_estate_path(real_estate), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  do %>
+          <%= link_to real_estate_path(real_estate), data: { method: :delete, confirm: "Are you sure ?" }  do %>
           <i class="fa-solid fa-trash"></i>
           <% end %>
         </p>
