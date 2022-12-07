@@ -6,37 +6,37 @@
     <div>
     <ul>
       <li><%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "toggle-side-nav avatar", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></li>
-      <li><%= link_to "/" do %>
+      <li id="with"><%= link_to "/" do %>
         <i class="fa-solid fa-gauge"></i>
         <% end %>
       </li>
-      <li><%= link_to cryptos_path do %>
+      <li id="yellow"><%= link_to cryptos_path do %>
         <i class="fa-solid fa-database"></i>
         <% end %>
       </li>
-      <li><%= link_to real_estates_path do %>
+      <li id="blue"><%= link_to real_estates_path do %>
         <i class="fa-solid fa-house"></i>
         <% end %>
       </li>
-      <li><%= link_to custom_invests_path do %>
+      <li id="green"><%= link_to custom_invests_path do %>
         <i class="fa-solid fa-download"></i>
         <% end  %>
       </li>
-      <li><%= link_to bank_accounts_path do %>
+      <li id="red"><%= link_to bank_accounts_path do %>
         <i class="fa-solid fa-piggy-bank"></i>
         <% end %>
       </li>
-      <li><%= link_to liabilities_path do %>
+      <li id="pink"><%= link_to liabilities_path do %>
         <i class="fa-solid fa-clipboard"></i>
         <% end %>
       </li>
       <li><a href="#">
         +</a>
         <ul>
-          <li><%= link_to "Real Estate", new_real_estate_path %></li>
-          <li><%= link_to "Cryptomonnaie", new_crypto_path %></li>
-          <li><%= link_to "Custom Invest", new_custom_invest_path %></li>
-          <li><%= link_to "Bank Account", new_bank_account_path %></li>
+          <li><%= link_to "Crypto", new_crypto_path %></li>
+          <li><%= link_to "Real", new_real_estate_path %></li>
+          <li><%= link_to "Custom", new_custom_invest_path %></li>
+          <li><%= link_to "Bank", new_bank_account_path %></li>
           <li><%= link_to "Liability", new_liability_path %></li>
         </ul>
       </li>
