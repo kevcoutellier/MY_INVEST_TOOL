@@ -1,22 +1,38 @@
 <div class="dashboard">
-  <div class="diags">
-    <div>
-      <canvas id="myChart"
-      data-custom=<%= CustomInvest.all_gain %>
-      data-bank=<%= BankAccount.all_bank %>
-      data-crypto=<%= Crypto.all_gain %>
-      data-realestate=<%= RealEstate.all_gain %>
-      >
-      </canvas>
+  <div class="left">
+      <div class="diag mychart1">
+        <canvas id="myChart"
+        data-custom=<%= CustomInvest.all_gain %>
+        data-bank=<%= BankAccount.all_bank %>
+        data-crypto=<%= Crypto.all_gain %>
+        data-realestate=<%= RealEstate.all_gain %>
+        >
+        </canvas>
+      </div>
     </div>
-    <div>
-      <canvas id="myChart2" data-controller="donut"
-      data-custom=<%= CustomInvest.all_gain %>
-      data-bank=<%= BankAccount.all_bank %>
-      data-crypto=<%= Crypto.all_gain %>
-      data-real=<%= RealEstate.all_gain %>
-      >
-      </canvas>
+  <div class="right">
+    <div class="blocks">
+      <div class="block">
+        <h5>Total BRUT</h5>
+        <h6><%= User.all_gain %> $</h6>
+        <p>Cryptomonnaie : <%= Crypto.all_gain %> $</p>
+        <p>Real Estate : <%= RealEstate.all_gain %> $</p>
+        <p>Custom Invest : <%= CustomInvest.all_gain %> $</p>
+        <p>Bank Account : <%= BankAccount.all_bank %> $</p>
+      </div>
+      <div class="block">
+        <h5>Total NET</h5>
+        <p>valeur</p>
+      </div>
+    </div>
+    <div class="mychart2">
+        <canvas id="myChart2" data-controller="donut"
+        data-custom=<%= CustomInvest.all_gain %>
+        data-bank=<%= BankAccount.all_bank %>
+        data-crypto=<%= Crypto.all_gain %>
+        data-real=<%= RealEstate.all_gain %>
+        >
+        </canvas>
     </div>
   </div>
 </div>
