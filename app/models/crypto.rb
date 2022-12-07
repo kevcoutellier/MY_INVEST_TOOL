@@ -3,6 +3,8 @@ class Crypto < ApplicationRecord
 
   def self.all_gain
 
-    19999
+    cryptos = Crypto.all
+      total_cryptos = cryptos.pluck(:amount).compact.sum
+
   end
 end

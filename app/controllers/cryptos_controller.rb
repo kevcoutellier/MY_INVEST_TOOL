@@ -30,6 +30,10 @@ class CryptosController < ApplicationController
         @crypto_sorted = @crypto_user.sort_by {|key, value| [-value["usd_market_cap"], key] }.to_h
         @crypto_keys = @crypto_user.keys
 
+        @cryptos.each do |crypto|
+         crypto.amount = crypto.quantity * @crypto_sorted["ethereum"]["usd"].to_f
+          crypto.save
+        end
   end
 
       def new

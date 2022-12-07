@@ -33,7 +33,7 @@
                 <% end %>
               </p>
             <p>
-          <%= link_to bank_account_path(bank_account), data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  do %>
+          <%= link_to bank_account_path(bank_account), data: { method: :delete, confirm: "Are you sure ?" }  do %>
           <i class="fa-solid fa-trash"></i>
         <% end %>
         </p>
