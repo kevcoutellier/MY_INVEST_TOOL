@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>The page you were looking for doesn't exist! (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-   .hit-the-floor {
+
+.hit-the-floor {
   color: #fff;
-  font-size: 50vw;
+  font-size: 10vw;
   font-weight: bold;
   font-family: Helvetica;
   text-shadow:
@@ -22,24 +23,29 @@
     0 .025em .05em rgba(0,0,0,.25),
     0 .05em .05em rgba(0,0,0,.2),
     0 .1em .1em rgba(0,0,0,.15);
+  display: fx;
+  justify-content: center;
+  align-items:center
 }
 
 body {
   background-color: black;
   min-height: 100vh;
-
-  display: flex;
   justify-content: center;
-  align-items: center;
-}
-.text {
- color: white;
+  align-items:flex-start
 }
 
+.text {
+  color: white;
+}
   </style>
 </head>
 <body>
-  <div class="text"><center><h1>The page you were looking for doesn't exist!</h1></center>
-<div class="hit-the-floor">404</div>
+<marquee behavior="alternate">
+  <div class="hit-the-floor">500
+  </div>
+  <img src="https://res.cloudinary.com/dezfv3vmn/image/upload/v1670506228/development/MI_xerwzg.png" width="600" height="600" alt="Myinvset " border="0">
+<div class="text"><h1>The page you were looking for doesn't exist!</h1></div>
+</marquee>
 </body>
 </html>
