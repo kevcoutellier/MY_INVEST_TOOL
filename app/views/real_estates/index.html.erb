@@ -24,15 +24,13 @@
             <%= cl_image_tag real_estate.photo.key, class:"card__img", crop: :fill %>
             <% end %>
           </div>
-          <div class="swiper-slide" id="descrip">
+          <div class="swiper-slide" id="description">
             <h2>Description</h2>
             <p>Address: <%= real_estate.address %></p>
-            <p>Description: <%= real_estate.description %></p>
             <p>Type: <%= real_estate.type_of %></p>
             <p>Category: <%= real_estate.category %></p>
             <p>Purchase price: <%= real_estate.purchase_price %>€</p>
             <p>Floor space: <%= real_estate.floor_space %>m²</p>
-            <p>Year of construction: <%= real_estate.year_of_construction %></p>
             <p>Date of purchase: <%= real_estate.date_of_purchase %></p>
             <p>Estimated price: <%= real_estate.estimation %>$</p>
             <p>Total gains: <%= real_estate.gain if real_estate.estimation %>$</p>

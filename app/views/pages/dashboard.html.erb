@@ -14,8 +14,8 @@
     <div class="blocks">
       <div class="block">
         <h5>Total BRUT</h5>
-        <h6><%= User.all_gain %> $</h6>
-        <p>Cryptomonnaie : <%= Crypto.all_gain %> $</p>
+        <h6><%= User.all_gain.round(2) %> $</h6>
+        <p>Cryptomonnaie : <%= Crypto.all_gain.round(2) %> $</p>
         <p>Real Estate : <%= RealEstate.all_gain %> $</p>
         <p>Custom Invest : <%= CustomInvest.all_gain %> $</p>
         <p>Bank Account : <%= BankAccount.all_bank %> $</p>
