@@ -76,7 +76,7 @@ header {
         position: absolute;
         top: 100%;
         left: 0;
-        width: 150px;
+        width: 300px;
         background:  #000000;
         display: flex;
         flex-direction: column;
@@ -86,7 +86,9 @@ header {
         li {
           a {
             color: white;
+
           }
+
         }
       }
     }
@@ -201,4 +203,26 @@ header {
       opacity: 1;
     }
   }
+}
+
+
+#crypto :hover{
+  color: #ffd700;
+
+}
+
+#loan :hover{
+  color: #00FF01;
+}
+
+#bank :hover{
+  color: #F76865;
+}
+
+#custom :hover{
+  color: #74EEEA;
+}
+
+#property :hover{
+  color: #F11CB5;
 }

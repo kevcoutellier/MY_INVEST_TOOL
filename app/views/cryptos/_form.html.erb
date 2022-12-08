@@ -1,10 +1,10 @@
 <div class="container py-5 justify-content-center">
-  <div class="bg-white rounded p-3 shadow booking-real ">
+  <div class="crypto-form ">
     <%= simple_form_for(@crypto) do |f| %>
     <%= f.input :name, label:"Name"  %>
     <%= f.input :wallet_address, label:"Wallet address" %>
     <%# <%= link_to "Back", cryptos_path, class:"btn-flat" %>
-    <%= f.submit "Add a wallet", class:"btn-form" %>
+    <%= f.submit "Add a wallet", class:"btn btn-crypto-color" %>
     <% end %>
   </div>
 </div>
