@@ -5,12 +5,24 @@ RealEstate.destroy_all
 CustomInvest.destroy_all
 User.destroy_all
 BankAccount.destroy_all
+Liability.destroy_all
 
 
 
 user = User.create!(email: "ted@my_invest.fr", password: "password", owner: false)
 user1 = User.create!(email: "kev@my_invest.fr", password: "password", owner: false)
 user2 = User.create!(email: "dia@my_invest.fr", password: "password", owner: false)
+
+liability = Liability.create!(
+  loan_name: "Miami House credit",
+  type_of: "Amortising loan(standard)",
+  amount: 200_000,
+  monthly_payment: 500,
+  interest_rate: 1.3,
+  start_date: Date.new(2018, 11, 16),
+  duration: 180,
+  user: user
+)
 
 
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669731177/my_invest/nike-futur_iacdl6.jpg")
@@ -26,7 +38,7 @@ custom_invest.photo.attach(io: file, filename: "nike-futur.jpg", content_type: "
 custom_invest.save
 
 
-file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669801293/my_invest/appartement-photo_cavo34.jpg")
+file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1670505631/development/kam-idris-_HqHX3LBN18-unsplash_led0sq.jpg")
 real_estate = RealEstate.new(
   address: "11 Palm Ave, Miami Beach, FL 33139, États-Unis",
   description: "My Home",
@@ -41,14 +53,15 @@ real_estate = RealEstate.new(
 )
 real_estate.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
 real_estate.save
-file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669801296/my_invest/t%C3%A9l%C3%A9chargement_4_ybxmeu.jpg")
+
+file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1670505633/development/loewe-technology-azMs02-lAFk-unsplash_ppmpxw.jpg")
 real_estate2 = RealEstate.new(
   address: "93 Palm Ave, Miami Beach, FL 33139, États-Unis",
   description: "Airbnb le Wagon",
   type_of: "Ground",
   category: "Principal residence",
   purchase_price: 50_000,
-  estimation: 70_000,
+  estimation: 55_000,
   floor_space: 100,
   year_of_construction: Date.new(2010, 11, 17),
   date_of_purchase: Date.new(2019, 12, 12),
@@ -56,15 +69,15 @@ real_estate2 = RealEstate.new(
 )
 real_estate2.photo.attach(io: file, filename: "nes.jpg", content_type: "image/jpg")
 real_estate2.save
-file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669801299/my_invest/t%C3%A9l%C3%A9chargement_3_stjfjt.jpg")
 
+file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1670505630/development/kam-idris-wF9NH87U-2E-unsplash_jrj3xs.jpg")
 real_estate3 = RealEstate.new(
   address: "33 Palm Ave, Miami Beach, FL 33139, États-Unis",
   description: "Airbnb le Wagon",
   type_of: "Flat",
   category: "Principal residence",
   purchase_price: 500_000,
-  estimation: 540_000,
+  estimation: 490_000,
   floor_space: 100,
   year_of_construction: Date.new(2010, 11, 17),
   date_of_purchase: Date.new(2019, 12, 12),
