@@ -1,15 +1,73 @@
 
+
+
+<div class="container">
+  <div class="cards">
+    <%if params[:query] == nil%>
+    <div class="card">
+      <%= link_to "", new_liability_path, class: "add-bot"%>
+      <div class="title-custom">
+      <h3>LIABILITIES</h3>
+       </div>
+        <h5>Total : <%= Liability.all_gain %> $</h5>
+          <% @liabilities.each do |liability| %>
+          <p><%= liability.loan_name %> : <%= liability.amount %>  $</p>
+          <% end %>
+      <div class="add_card_custom">
+        <p><i class="fa-solid fa-plus"></i></p>
+      </div>
+    </div>
+      <% end %>
+      <% @liabilities.each do |liability| %>
+    <div class="card" id="descrip">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url (' <%=image_tag "https://res.cloudinary.com/dezfv3vmn/image/upload/v1670531153/development/Capture_d_e%CC%81cran_2022-12-08_a%CC%80_21.25.38_jsuqoy.png" %> ')">
+
+        <h2><%= liability.loan_name %></h2>
+      </div>
+        <p><%= liability.amount %> $ - <%= liability.interest_rate %> %</p>
+          <p><%= liability.monthly_payment %>$/month</p>
+            <p>Start date : <%= liability.start_date %></p>
+              <p>Duration : <%= liability.duration %> month</p>
+
+      <div class="bottom-card">
+          <p>
+            <%= link_to edit_liability_path(liability) do %>
+              <i class="fa-solid fa-pen-to-square"></i>
+                <% end %>
+              </p>
+            <p>
+          <%= link_to liability_path(liability), data: { method: :delete, confirm: "Are you sure ?" }  do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+        </p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<%#
 <div class="container">
   <div class="cards">
     <div class="card">
       <h1 class="h2 my-3 d-flex justify-content-center">My credits</h1>
         <br>
           <ul>
-              <% @liabilities.each do |liability| %>
-              <li><%= link_to liability.loan_name, liability_path(liability) %></li>
-              <%end %>
-          </ul>
-              <%= link_to "Add", new_liability_path, class: "add-bot"%>
-      </div>
+              <%# <% @liabilities.each do |liability| %>
+              <%# <li><%= link_to liability.loan_name, liability_path(liability)</li> %>
+              <%# <%end %> %> %>
+          <%# </ul>
+              <%= link_to "Add", new_liability_path, class: "add-bot"%> %>
+      <%# </div>
   </div>
-</div>
+</div> %> %> %>

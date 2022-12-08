@@ -24,6 +24,17 @@ liability = Liability.create!(
   user: user
 )
 
+liability = Liability.create!(
+  loan_name: "Palm Beach House credit",
+  type_of: "Amortising loan(standard)",
+  amount: 300_000,
+  monthly_payment: 750,
+  interest_rate: 1.3,
+  start_date: Date.new(2015, 10, 22),
+  duration: 180,
+  user: user
+)
+
 
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669731177/my_invest/nike-futur_iacdl6.jpg")
 custom_invest = CustomInvest.new(
@@ -35,6 +46,18 @@ unity_cost: 180,
 actual_cost: 400,
 user: user)
 custom_invest.photo.attach(io: file, filename: "nike-futur.jpg", content_type: "image/jpg")
+custom_invest.save
+
+file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669731149/my_invest/or_qwq5pe.jpg")
+custom_invest = CustomInvest.new(
+name: "Nike RVF",
+category: "precious metals",
+description: "L'or en barre",
+quantity: 100,
+unity_cost: 45,
+actual_cost: 55,
+user: user)
+custom_invest.photo.attach(io: file, filename: "or.jpg", content_type: "image/jpg")
 custom_invest.save
 
 
@@ -57,7 +80,7 @@ real_estate.save
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1670505633/development/loewe-technology-azMs02-lAFk-unsplash_ppmpxw.jpg")
 real_estate2 = RealEstate.new(
   address: "93 Palm Ave, Miami Beach, FL 33139, États-Unis",
-  description: "Airbnb le Wagon",
+  description: "Rental 93 Palm",
   type_of: "Ground",
   category: "Principal residence",
   purchase_price: 50_000,
@@ -73,7 +96,7 @@ real_estate2.save
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1670505630/development/kam-idris-wF9NH87U-2E-unsplash_jrj3xs.jpg")
 real_estate3 = RealEstate.new(
   address: "33 Palm Ave, Miami Beach, FL 33139, États-Unis",
-  description: "Airbnb le Wagon",
+  description: "Rental 33 Palm",
   type_of: "Flat",
   category: "Principal residence",
   purchase_price: 500_000,

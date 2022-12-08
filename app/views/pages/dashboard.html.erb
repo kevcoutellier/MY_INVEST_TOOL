@@ -14,16 +14,18 @@
   <div class="right">
     <div class="blocks">
       <div class="block">
-        <h5>Total BRUT</h5>
+        <h5>Patrimoine BRUT</h5>
         <h6><%= User.all_gain.round %> $</h6>
         <p>Cryptomonnaie : <%= Crypto.all_gain.round(2) %> $</p>
-        <p>Real Estate : <%= RealEstate.all_gain %> $</p>
-        <p>Custom Invest : <%= CustomInvest.all_gain %> $</p>
+        <p>Real Estate : <%= RealEstate.all_purchase_price %> $</p>
+        <p>Custom Invest : <%= CustomInvest.all_actual_cost %> $</p>
         <p>Bank Account : <%= BankAccount.all_bank %> $</p>
       </div>
       <div class="block">
-        <h5>Total NET</h5>
-        <p><%= Liability.all_gain.round(2) %> $</p>
+        <h5>Patrimoine NET</h5>
+        <h6><%= User.all_gain.round - Liability.all_gain.round(2) %> $</h6>
+        <p>Total Brut : <%= User.all_gain.round %> $</p>
+        <p>Liability : -<%= Liability.all_gain.round(2) %> $</p>
       </div>
     </div>
     <div class="mychart2">

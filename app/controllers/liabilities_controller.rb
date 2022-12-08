@@ -1,5 +1,5 @@
 class LiabilitiesController < ApplicationController
-  before_action :set_liability, only: [ :show, :destroy]
+  before_action :set_liability, only: [ :show, :edit, :update, :destroy]
 
   def index
     @liabilities = Liability.all
@@ -20,6 +20,9 @@ class LiabilitiesController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
   end
 
   def destroy
