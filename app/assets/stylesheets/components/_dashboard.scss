@@ -1,6 +1,9 @@
 .dashboard {
+  height: 800px;
+  width: 800px;
   margin-top: 50px;
   display: grid;
+
   grid-template-areas:
             "a b"
             "a c";
@@ -8,6 +11,7 @@
     grid-area: a;
     width: 600px;
     height: 600px;
+    margin-right: 0 !important;
   }
   .mychart2{
     grid-area: c;
@@ -29,14 +33,16 @@
 .blocks{
   grid-area: b;
   display: flex;
+  height: 300px;
 }
 .block{
   background-color: #1A1A1A;
-  height: 300px;
+  height: 100px;
   width: 200px;
   font-size: 15px;
   color: rgb(255, 255, 255);
   border-radius: 15px;
+  box-shadow: 0 0 15px rgb(255, 255, 255);
   transition: box-shadow 250ms;
   opacity: 0.5;
   margin: 20px;
@@ -44,11 +50,30 @@
 
 
   &:hover{
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    // height: 280px;
+    // width: 200px;
+    animation-duration: 2000ms;
+    animation-name: slidein;
+    overflow: hidden;
+
+    background-color: rgb(49, 49, 49);
+    color: rgb(255, 255, 255);
     box-shadow: 0 0 15px rgb(255, 255, 255);
     opacity: 1;
+    transition-duration: 4000ms;
     transition: opacity 1000ms;
+    p{
+      color:rgb(255, 255, 255);;
+    }
+  }
+
+  @keyframes slidein {
+    from {
+      height: 200px;
+    }
+    to {
+      height: 100%;
+    }
   }
 
   h5{
@@ -57,7 +82,7 @@
 
   h6{
     padding-top: 5px;
-    padding-bottom: 15px;
+    padding-bottom: 35px;
   }
 
   p{

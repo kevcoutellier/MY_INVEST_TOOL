@@ -25,12 +25,16 @@ export const donut = () => {
       options: {
         responsive: true,
         plugins: {
+          labels:{showActualPercentages: true},
           legend: {
             position: 'bottom',
           },
           title: {
             display: true
             // text: "Resultat"
+          },
+          pieceLabel: {
+            mode: 'value'
           }
         },
       },
