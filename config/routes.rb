@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :real_estates
   resources :custom_invests
   resources :bank_accounts
-  resources :liabilities, only: [:new, :index, :destroy, :show, :create]
+  resources :liabilities
 end
