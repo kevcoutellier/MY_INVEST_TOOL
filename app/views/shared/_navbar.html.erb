@@ -6,28 +6,28 @@
     <div>
     <ul>
       <li><%= image_tag "https://res.cloudinary.com/dezfv3vmn/image/upload/v1670506228/development/MI_xerwzg.png", class: "toggle-side-nav avatar", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></li>
-      <li id="with"><%= link_to "/" do %>
+      <li id="with" title="Dashboard"><%= link_to "/" do %>
         <i class="fa-solid fa-gauge"></i>
         <% end %>
       </li>
-      <li id="yellow"><%= link_to cryptos_path do %>
+      <li id="yellow" title="Cryptos"><%= link_to cryptos_path do %>
         <i class="fa-solid fa-database"></i>
         <% end %>
       </li>
-      <li id="pink"><%= link_to real_estates_path do %>
+      <li id="pink" title="Real-estate"><%= link_to real_estates_path do %>
         <i class="fa-solid fa-house"></i>
         <% end %>
       </li>
-      <li id="blue"><%= link_to custom_invests_path do %>
+      <li id="blue" title="Custom-invest"><%= link_to custom_invests_path do %>
         <i class="fa-solid fa-download"></i>
         <% end  %>
       </li>
-      <li id="red"><%= link_to bank_accounts_path do %>
+      <li id="red" title="Bank-accounts"><%= link_to bank_accounts_path do %>
         <i class="fa-solid fa-piggy-bank"></i>
         <% end %>
       </li>
-      <li id="green"><%= link_to liabilities_path do %>
-        <i class="fa-solid fa-clipboard"></i>
+      <li id="green" title="Liabilities"><%= link_to liabilities_path do %>
+        <i class="fa-solid fa-clipboard" ></i>
         <% end %>
       </li>
       <li><a href="#">
