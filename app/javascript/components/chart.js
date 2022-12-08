@@ -26,7 +26,7 @@ export const donut = () => {
         responsive: true,
         plugins: {
           legend: {
-            position: 'top',
+            position: 'bottom',
           },
           title: {
             display: true

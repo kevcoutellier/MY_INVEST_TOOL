@@ -11,6 +11,6 @@ class User < ApplicationRecord
 
   def self.all_gain
     total = 0
-    total = Crypto.all_gain + RealEstate.all_gain + CustomInvest.all_gain + BankAccount.all_bank
+    total = (Crypto.all_gain + RealEstate.all_gain + CustomInvest.all_gain + BankAccount.all_bank).round(2)
   end
 end
