@@ -1,0 +1,17 @@
+$theme-colors: (
+  "primary": $primary,
+  "success": $success
+);
+
+
+$custom-colors: (
+"crypto-color": $crypto,
+"bank-color": $bank-account,
+"custom-invest-color": $custom-invest,
+"liabilities-color": $liabilities,
+"real-estate-color": $real-estate
+);
+
+
+
+$theme-colors: map-merge($theme-colors, $custom-colors);

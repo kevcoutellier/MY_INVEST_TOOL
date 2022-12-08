@@ -1,5 +1,5 @@
  <div class="container py-5 justify-content-center">
-  <div class="bg-white rounded p-3 shadow liabilities ">
+  <div class="liabilities ">
         <%= simple_form_for(@liability) do |f| %>
         <%= f.input :loan_name, label:"Loan name", placeholder: "House"%>
         <%= f.input :type_of, collection: Liability::LOAN_TYPE, label:"Type"%>
@@ -9,7 +9,7 @@
         <%= f.input :start_date, as: :date, start_year: Date.today.year - 30,
         end_year: Date.today.year, discard_day: true, order: [:month, :year], label:"Start date" %>
         <%= f.input :duration, label:"Duration", placeholder: "180 months" %>
-        <%= f.submit "Submit", class: "btn-form"%>
+        <%= f.submit "Add a liability", class: "btn btn-liabilities-color"%>
         <% end %>
       </div>
     </div>
