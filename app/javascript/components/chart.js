@@ -16,7 +16,7 @@ export const donut = () => {
         // via le controller de pages et donc vue dashboard, récupérer infos conso de la journée
         labels: [`Crypto: ${totalCrypto}$`,`Real Estate: ${totalReal}$`,`Custom Invest: ${totalCustom}$`, `Bank Acount: ${totalBank}$`],
         datasets: [{
-          label: '$',
+          label: '%',
           data: [totalCrypto, totalReal, totalCustom, totalBank],
           borderWidth: 1,
           backgroundColor: ["#FFFE50" , "#F11CB5","#74EEEA","#F76865"]
@@ -25,12 +25,16 @@ export const donut = () => {
       options: {
         responsive: true,
         plugins: {
+          labels:{showActualPercentages: true},
           legend: {
             position: 'bottom',
           },
           title: {
             display: true
             // text: "Resultat"
+          },
+          pieceLabel: {
+            mode: 'value'
           }
         },
       },
