@@ -1,8 +1,11 @@
 .dashboard {
-  height: 800px;
-  width: 800px;
+  // height: 800px;
+  width: 100%;
   margin-top: 50px;
-  display: grid;
+  // display: grid;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 10%;
 
   grid-template-areas:
             "a b"
@@ -15,8 +18,8 @@
   }
   .mychart2{
     grid-area: c;
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 400px;
   }
 }
 .diags {

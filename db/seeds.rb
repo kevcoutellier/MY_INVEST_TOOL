@@ -17,7 +17,7 @@ file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1670531153/d
 liability = Liability.new(
   loan_name: "Miami House credit",
   type_of: "Amortising loan(standard)",
-  amount: 200_000,
+  amount: 50_000,
   monthly_payment: 500,
   interest_rate: 1.3,
   start_date: Date.new(2018, 11, 16),
@@ -31,7 +31,7 @@ file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1670531153/d
 liability2 = Liability.new(
   loan_name: "Palm Beach House credit",
   type_of: "Amortising loan(standard)",
-  amount: 300_000,
+  amount: 70_000,
   monthly_payment: 750,
   interest_rate: 1.3,
   start_date: Date.new(2015, 10, 22),
@@ -45,20 +45,20 @@ file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669731177/m
 custom_invest = CustomInvest.new(
 name: "Nike RVF",
 category: "shoes",
-description: "Les chaussures de retour vers le futur version NIKE industrie",
+description: "SHOES BTF NIKE industrie",
 quantity: 1,
-unity_cost: 180,
-actual_cost: 400,
+unity_cost: 600,
+actual_cost: 1000,
 user: user)
 custom_invest.photo.attach(io: file, filename: "nike-futur.jpg", content_type: "image/jpg")
 custom_invest.save
 
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669731149/my_invest/or_qwq5pe.jpg")
 custom_invest1 = CustomInvest.new(
-name: "Nike RVF",
+name: "Gold",
 category: "precious metals",
-description: "L'or en barre",
-quantity: 100,
+description: "Gold",
+quantity: 300,
 unity_cost: 45,
 actual_cost: 55,
 user: user1)
@@ -72,8 +72,8 @@ real_estate = RealEstate.new(
   description: "My Home",
   type_of: "House",
   category: "Principal residence",
-  purchase_price: 200_000,
-  estimation: 220_000,
+  purchase_price: 90_000,
+  estimation: 100_000,
   floor_space: 200,
   year_of_construction: Date.new(1978, 11, 23),
   date_of_purchase: Date.new(2018, 11, 16),
@@ -104,8 +104,8 @@ real_estate3 = RealEstate.new(
   description: "Rental 33 Palm",
   type_of: "Flat",
   category: "Principal residence",
-  purchase_price: 500_000,
-  estimation: 490_000,
+  purchase_price: 40_000,
+  estimation: 39_000,
   floor_space: 100,
   year_of_construction: Date.new(2010, 11, 17),
   date_of_purchase: Date.new(2019, 12, 12),

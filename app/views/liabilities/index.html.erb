@@ -4,7 +4,7 @@
 <div class="container">
   <div class="cards">
     <%if params[:query] == nil%>
-    <div class="card">
+    <div class="card card-green">
       <%= link_to "", new_liability_path, class: "add-bot"%>
       <div class="title-custom">
       <h3>LIABILITIES</h3>
@@ -19,7 +19,7 @@
     </div>
       <% end %>
       <% @liabilities.each do |liability| %>
-    <div class="card" id="descrip">
+    <div class="card card-green" id="descrip">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path liability.photo.key, crop: :fill %>')">
 
         <h2><%= liability.loan_name %></h2>

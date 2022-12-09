@@ -3,7 +3,7 @@
 <div class="container">
   <div class="cards">
     <%if params[:query] == nil%>
-    <div class="card">
+    <div class="card card-red">
       <%= link_to "", new_bank_account_path, class: "add-bot"%>
       <div class="title-custom">
       <h3>GAINS BANK</h3>
@@ -18,7 +18,7 @@
     </div>
       <% end %>
       <% @bank_accounts.each do |bank_account| %>
-    <div class="card" id="descrip">
+    <div class="card card-red" id="descrip">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path bank_account.photo.key, crop: :fill %>')">
         <h2><%= bank_account.bank %></h2>
       </div>

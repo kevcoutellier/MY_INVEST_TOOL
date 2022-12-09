@@ -1,7 +1,7 @@
 <div class="container">
   <div class="cards">
     <%if params[:query] == nil%>
-    <div class="card">
+    <div class="card card-pink">
       <%= link_to "", new_real_estate_path, class: "add-bot"%>
       <div class="title-custom">
         <h3>GAINS REAL ESTATE</h3>
@@ -16,7 +16,7 @@
     </div>
     <% end %>
     <% @real_estates.each do |real_estate| %>
-    <div class="card">
+    <div class="card card-pink">
       <div class="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">

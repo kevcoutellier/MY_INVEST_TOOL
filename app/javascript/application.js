@@ -17,7 +17,6 @@ import { bars } from "./components/chart2"
 import { swiper_card } from "./components/swiper_card";
 // turbolinks:load
 document.addEventListener("DOMContentLoaded", function () {
-  console.log('donut entry');
   swiper_card();
   navbar();
   donut();

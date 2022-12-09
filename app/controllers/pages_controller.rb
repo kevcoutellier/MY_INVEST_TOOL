@@ -7,7 +7,7 @@ class PagesController < ApplicationController
      @cryptos = Crypto.all
      @bank_accounts = BankAccount.all
      @custom_invests = CustomInvest.all
-
+    @liabilities = Liability.all
   end
 
   def wallet

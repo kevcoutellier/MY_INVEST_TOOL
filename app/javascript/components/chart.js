@@ -3,7 +3,6 @@ import Chart from 'chart.js/auto'
 export const donut = () => {
   const ctx = document.getElementById('myChart');
 
-  console.log('test.data');
   if (ctx) {
     const totalCrypto = parseFloat(ctx.dataset.crypto, 10)
     const totalReal = parseFloat(ctx.dataset.realestate, 10)
