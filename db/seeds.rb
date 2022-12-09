@@ -54,16 +54,16 @@ custom_invest.photo.attach(io: file, filename: "nike-futur.jpg", content_type: "
 custom_invest.save
 
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669731149/my_invest/or_qwq5pe.jpg")
-custom_invest = CustomInvest.new(
+custom_invest1 = CustomInvest.new(
 name: "Nike RVF",
 category: "precious metals",
 description: "L'or en barre",
 quantity: 100,
 unity_cost: 45,
 actual_cost: 55,
-user: user)
-custom_invest.photo.attach(io: file, filename: "or.jpg", content_type: "image/jpg")
-custom_invest.save
+user: user1)
+custom_invest1.photo.attach(io: file, filename: "or.jpg", content_type: "image/jpg")
+custom_invest1.save
 
 
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1670505631/development/kam-idris-_HqHX3LBN18-unsplash_led0sq.jpg")
