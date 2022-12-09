@@ -20,7 +20,7 @@
       <% end %>
       <% @liabilities.each do |liability| %>
     <div class="card" id="descrip">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url (' <%=image_tag "https://res.cloudinary.com/dezfv3vmn/image/upload/v1670531153/development/Capture_d_e%CC%81cran_2022-12-08_a%CC%80_21.25.38_jsuqoy.png" %> ')">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path liability.photo.key, crop: :fill %>')">
 
         <h2><%= liability.loan_name %></h2>
       </div>

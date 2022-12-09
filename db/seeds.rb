@@ -13,7 +13,8 @@ user = User.create!(email: "ted@my_invest.fr", password: "password", owner: fals
 user1 = User.create!(email: "kev@my_invest.fr", password: "password", owner: false)
 user2 = User.create!(email: "dia@my_invest.fr", password: "password", owner: false)
 
-liability = Liability.create!(
+file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1670531153/development/Capture_d_e%CC%81cran_2022-12-08_a%CC%80_21.25.38_jsuqoy.png")
+liability = Liability.new(
   loan_name: "Miami House credit",
   type_of: "Amortising loan(standard)",
   amount: 200_000,
@@ -23,8 +24,11 @@ liability = Liability.create!(
   duration: 180,
   user: user
 )
+liability.photo.attach(io: file, filename: "smc.jpg", content_type: "image/jpg")
+liability.save
 
-liability = Liability.create!(
+file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1670531153/development/Capture_d_e%CC%81cran_2022-12-08_a%CC%80_21.25.38_jsuqoy.png")
+liability2 = Liability.new(
   loan_name: "Palm Beach House credit",
   type_of: "Amortising loan(standard)",
   amount: 300_000,
@@ -32,9 +36,10 @@ liability = Liability.create!(
   interest_rate: 1.3,
   start_date: Date.new(2015, 10, 22),
   duration: 180,
-  user: user
+  user: user2
 )
-
+liability2.photo.attach(io: file, filename: "smc.jpg", content_type: "image/jpg")
+liability2.save
 
 file = URI.open("https://res.cloudinary.com/dezfv3vmn/image/upload/v1669731177/my_invest/nike-futur_iacdl6.jpg")
 custom_invest = CustomInvest.new(
