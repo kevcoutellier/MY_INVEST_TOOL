@@ -4,7 +4,7 @@
 <div class="container">
   <div class="cards">
     <%if params[:query] == nil%>
-    <div class="card">
+    <div class="card card-blue">
       <%= link_to "", new_custom_invest_path, class: "add-bot"%>
       <div class="title-custom">
         <h3>GAINS CUSTOM</h3>
@@ -18,7 +18,7 @@
     </div>
       <% end %>
       <% @custom_invests.each do |custom_invest| %>
-    <div class="card">
+    <div class="card card-blue">
       <div class="swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -31,7 +31,7 @@
           <div class="swiper-slide" id="descrip">
             <h2>Détails</h2>
               <p>Type : <%= custom_invest.category %></p>
-              <p>Quantity : <%= custom_invest.quantity %> u</p>
+              <p>Quantity : <%= custom_invest.quantity %> gr</p>
               <p>Unity_cost : <%= custom_invest.unity_cost %> $</p>
               <p>Actual_cost : <%= custom_invest.actual_cost %> $</p>
               <% if custom_invest.actual_cost && custom_invest.unity_cost %>

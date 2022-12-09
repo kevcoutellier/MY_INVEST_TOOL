@@ -2,10 +2,11 @@
   <div class="left">
       <div class="diag mychart1">
         <canvas id="myChart"
+
         data-custom=<%= ((CustomInvest.all_gain.to_f / User.all_gain.round.to_f)*100).to_f.round(2) %>
         data-bank=<%= ((BankAccount.all_bank.to_f / User.all_gain.round.to_f)*100).to_f.round(2) %>
         data-crypto=<%= ((Crypto.all_gain.to_f / User.all_gain.round.to_f)*100).to_f.round(2) %>
-        data-realestate=<%= ((RealEstate.all_gain.to_f / User.all_gain.round.to_f)*100).to_f.round(2)%>
+        data-realestate=<%= ((RealEstate.all_estimation / User.all_gain.round.to_f)*100).to_f.round(2)%>
 
         >
         </canvas>
@@ -14,7 +15,7 @@
   <div class="right">
     <div class="blocks">
       <div class="block">
-        <h5>Patrimoine BRUT</h5>
+        <h5>GROSS Wealth</h5>
         <h6><%= User.all_gain.round %> $</h6>
         <p>Cryptomonnaie : <%= Crypto.all_gain.round(2) %> $</p>
         <p>Real Estate : <%= RealEstate.all_purchase_price %> $</p>
@@ -22,7 +23,14 @@
         <p>Bank Account : <%= BankAccount.all_bank %> $</p>
       </div>
       <div class="block">
-        <h5>Patrimoine NET</h5>
+        <h5>Liabilities</h5>
+        <h6><%= Liability.all_gain.round(2) %> $</h6>
+        <p><% @liabilities.each do |liability| %></p>
+         <p> <%= liability.loan_name %> : <%= liability.amount %>  $</p>
+          <% end %>
+      </div>
+      <div class="block">
+        <h5>NET Worth</h5>
         <h6><%= User.all_gain.round - Liability.all_gain.round(2) %> $</h6>
         <p>Total Brut : <%= User.all_gain.round %> $</p>
         <p>Liability : -<%= Liability.all_gain.round(2) %> $</p>

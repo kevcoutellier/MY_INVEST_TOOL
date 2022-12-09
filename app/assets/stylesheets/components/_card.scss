@@ -148,3 +148,28 @@
   margin-bottom: 30px;
 
 }
+.card-blue{
+    &:hover{
+      box-shadow: 0 0 15px #74EEEA;
+    }
+}
+.card-pink{
+  &:hover{
+    box-shadow: 0 0 15px #F11CB5;
+  }
+}
+.card-yellow{
+  &:hover{
+    box-shadow: 0 0 15px #FFFE50;
+  }
+}
+.card-red{
+  &:hover{
+    box-shadow: 0 0 15px #F76865;
+  }
+}
+.card-green{
+  &:hover{
+    box-shadow: 0 0 15px #00FF01;
+  }
+}
