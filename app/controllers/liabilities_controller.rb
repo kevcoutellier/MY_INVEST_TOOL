@@ -37,6 +37,6 @@ class LiabilitiesController < ApplicationController
   end
 
   def liability_params
-    params.require(:liability).permit(:loan_name, :type_of, :amount, :monthly_payment, :interest_rate, :start_date, :duration)
+    params.require(:liability).permit(:loan_name, :type_of, :amount, :monthly_payment, :interest_rate, :start_date, :duration,:photo)
   end
 end

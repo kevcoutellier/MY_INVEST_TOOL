@@ -8,6 +8,7 @@ class Liability < ApplicationRecord
   validates :interest_rate, presence: true
   validates :start_date, presence: true
   validates :duration, presence: true
+  has_one_attached :photo
 
 
 def self.all_gain
