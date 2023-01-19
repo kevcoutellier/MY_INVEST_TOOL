@@ -1,65 +1,30 @@
+<%# INDEX INFOS %>
+<div class="container" id="crypto">
+  <div class="en-tete">
+      <h1>MY BANK ACCOUNTS</h1>
+      <%= link_to "Add bank account", new_bank_account_path %>
+      <br>
 
+<div class = "container" id = "crypto-index">
+<div class = "container" id = "crypto-index">
+<%# INDEX BANK ACCOUNT%>
+<% @total = 0 %>
 
-<div class="container">
-  <div class="cards">
-    <%if params[:query] == nil%>
-    <div class="card card-red">
-      <%= link_to "", new_bank_account_path, class: "add-bot"%>
-      <div class="title-custom">
-      <h3>GAINS BANK</h3>
-       </div>
-        <h5>Total : <%= BankAccount.all_bank %> $</h5>
-          <% @bank_accounts.each do |bank_account| %>
-          <p> <%= bank_account.bank %> <%= bank_account.balance %> $</p>
-          <% end %>
-      <div class="add_card_custom">
-        <p><i class="fa-solid fa-plus"></i></p>
-      </div>
-    </div>
-      <% end %>
       <% @bank_accounts.each do |bank_account| %>
-    <div class="card card-red" id="descrip">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path bank_account.photo.key, crop: :fill %>')">
-        <h2><%= bank_account.bank %></h2>
-      </div>
-        <p><%= bank_account.account_number %></p>
+      <div class = "card-bank">
+          <h2><%= bank_account.bank %></h2>
+          <p><%= bank_account.account_number %></p>
           <p>Balance : <%= bank_account.balance %> $</p>
-            <p>Currency : <%= bank_account.currency %> </p>
+          <p>Currency : <%= bank_account.currency %> </p>
 
-      <div class="bottom-card">
-          <p>
-            <%= link_to edit_bank_account_path(bank_account) do %>
-              <i class="fa-solid fa-pen-to-square"></i>
-                <% end %>
-              </p>
-            <p>
-          <%= link_to bank_account_path(bank_account), data: { method: :delete, confirm: "Are you sure ?" }  do %>
-          <i class="fa-solid fa-trash"></i>
-        <% end %>
-        </p>
+        <div class = "crypto-link">
+          <%= link_to "Edit", edit_bank_account_path(bank_account)  %>
+          <%= link_to "Delete", bank_account_path(bank_account), data: { method: :delete, confirm: "Are you sure ?" }   %>
+        </div>
       </div>
-    </div>
-    <% end %>
-  </div>
+      <% end %>
 </div>
-
-
-
-<script>
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  // direction: 'vertical',
-  loop: true,
-
-  // pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-});
-</script>
+</div>
+</div>
+        <h3>Total : <%= BankAccount.all_bank %>$</h3>
+</div>

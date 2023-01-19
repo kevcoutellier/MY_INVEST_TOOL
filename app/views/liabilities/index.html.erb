@@ -1,73 +1,33 @@
+      <%# INDEX INFOS %>
+      <div class="container" id="crypto">
+    <div class="en-tete">
+      <h1>MY LIABILITIES</h1>
+      <%= link_to "Add new liability", new_liability_path %>
+
+<div class = "container" id = "crypto-index">
+        <div class = "container" id = "crypto-index">
+ <%# INDEX LIABILITIES %>
+<% @total = 0 %>
 
 
-
-<div class="container">
-  <div class="cards">
-    <%if params[:query] == nil%>
-    <div class="card card-green">
-      <%= link_to "", new_liability_path, class: "add-bot"%>
-      <div class="title-custom">
-      <h3>LIABILITIES</h3>
-       </div>
-        <h5>Total : <%= Liability.all_gain %> $</h5>
-          <% @liabilities.each do |liability| %>
-          <p><%= liability.loan_name %> : <%= liability.amount %>  $</p>
-          <% end %>
-      <div class="add_card_custom">
-        <p><i class="fa-solid fa-plus"></i></p>
-      </div>
-    </div>
-      <% end %>
       <% @liabilities.each do |liability| %>
-    <div class="card card-green" id="descrip">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path liability.photo.key, crop: :fill %>')">
-
+  <div class = "card-liabilities">
         <h2><%= liability.loan_name %></h2>
-      </div>
         <p><%= liability.amount %> $ - <%= liability.interest_rate %> %</p>
           <p><%= liability.monthly_payment %>$/month</p>
             <p>Start date : <%= liability.start_date %></p>
               <p>Duration : <%= liability.duration %> month</p>
-
-      <div class="bottom-card">
-          <p>
-            <%= link_to edit_liability_path(liability) do %>
-              <i class="fa-solid fa-pen-to-square"></i>
-                <% end %>
-              </p>
-            <p>
-          <%= link_to liability_path(liability), data: { method: :delete, confirm: "Are you sure ?" }  do %>
-          <i class="fa-solid fa-trash"></i>
-        <% end %>
-        </p>
+        <div class = "crypto-link">
+          <%= link_to "edit", edit_liability_path(liability) %>
+          <%= link_to "Delete", liability_path(liability), data: { method: :delete, confirm: "Are you sure ?" } %>
       </div>
-    </div>
-    <% end %>
-  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-<%#
-<div class="container">
-  <div class="cards">
-    <div class="card">
-      <h1 class="h2 my-3 d-flex justify-content-center">My credits</h1>
-        <br>
-          <ul>
-              <%# <% @liabilities.each do |liability| %>
-              <%# <li><%= link_to liability.loan_name, liability_path(liability)</li> %>
-              <%# <%end %> %> %>
-          <%# </ul>
-              <%= link_to "Add", new_liability_path, class: "add-bot"%> %>
-      <%# </div>
-  </div>
-</div> %> %> %>
+      <% end %>
+      </div>
+</div>
+          <% @liabilities.each do |liability| %>
+          <p><%= liability.loan_name %> : <%= liability.amount %>  $</p>
+          <% end %>
+    <h5>Total : <%= Liability.all_gain %> $</h5>
+</div>
+</div>

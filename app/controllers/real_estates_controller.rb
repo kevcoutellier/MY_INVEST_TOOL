@@ -12,7 +12,7 @@ class RealEstatesController < ApplicationController
         lng: real_estate.longitude,
         info_window: render_to_string(partial: "info_window", locals: { real_estate: real_estate }),
         real_estate: real_estate.id,
-        image_url: helpers.cloudinary_url(real_estate.photo.key)
+        # image_url: helpers.cloudinary_url(real_estate.photo.key)
       }
     end
   end

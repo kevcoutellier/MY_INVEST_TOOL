@@ -15,7 +15,6 @@
           <p>Estimated price: <%= @real_estate.estimation %>$</p>
           <p>Total gains: <%= (@real_estate.estimation - @real_estate.purchase_price) if @real_estate.estimation %>$</p>
           <br>
-          <%= cl_image_tag @real_estate.photo.key, height: 300, width: 400, crop: :fill %>
           <br>
           <br>
           <%= link_to "Edit", edit_real_estate_path(@real_estate), class: "btn btn-flat" %>

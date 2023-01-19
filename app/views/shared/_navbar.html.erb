@@ -1,34 +1,20 @@
 
-
-
 <header>
   <nav class="nav-main">
     <div>
     <ul>
-      <li><%= image_tag "https://res.cloudinary.com/dezfv3vmn/image/upload/v1670506228/development/MI_xerwzg.png", class: "toggle-side-nav avatar", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></li>
-      <li id="with" title="Dashboard"><%= link_to "/" do %>
-        <i class="fa-solid fa-gauge"></i>
-        <% end %>
+      <li><%= image_tag "", class: "toggle-side-nav avatar", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></li>
+      <li id="with" title="Dashboard"><%= link_to "Dashboard", root_path  %>
       </li>
-      <li id="yellow" title="Cryptos"><%= link_to cryptos_path do %>
-        <i class="fa-solid fa-database"></i>
-        <% end %>
+      <li id="yellow" title="Cryptos"><%= link_to "Cryptos", cryptos_path  %>
       </li>
-      <li id="pink" title="Real-estate"><%= link_to real_estates_path do %>
-        <i class="fa-solid fa-house"></i>
-        <% end %>
+      <li id="pink" title="Real-estate"><%= link_to "Real Estates", real_estates_path  %>
       </li>
-      <li id="blue" title="Custom-invest"><%= link_to custom_invests_path do %>
-        <i class="fa-solid fa-download"></i>
-        <% end  %>
+      <li id="blue" title="Custom-invest"><%= link_to "Custom Invests", custom_invests_path  %>
       </li>
-      <li id="red" title="Bank-accounts"><%= link_to bank_accounts_path do %>
-        <i class="fa-solid fa-piggy-bank"></i>
-        <% end %>
+      <li id="red" title="Bank-accounts"><%= link_to "Bank Accounts", bank_accounts_path  %>
       </li>
-      <li id="green" title="Liabilities"><%= link_to liabilities_path do %>
-        <i class="fa-solid fa-clipboard" ></i>
-        <% end %>
+      <li id="green" title="Liabilities"><%= link_to "Liabilities", liabilities_path  %>
       </li>
       <li><a href="#">
         +</a>

@@ -2,9 +2,6 @@
   <div class="show-card">
     <div class="show-card__top">
       <div class="show-card__img">
-        <% if @custom_invest.photo.key  %>
-        <%= cl_image_tag @custom_invest.photo.key %>
-        <% end  %>
       </div>
       <div class="show-card__text">
         <div>
@@ -15,7 +12,6 @@
           <p>Actual_cost : <%= @custom_invest.actual_cost %> $</p>
           <p><%= @custom_invest.unity_cost_all %></p>
           <div class="show-card__action">
-            <%# < class="">$<%= @bot.price %>
             <div>
               <%= link_to "edit", edit_custom_invest_path, class: "btn-medium" %>
               <%= link_to 'delete', custom_invest_path(@custom_invest), class:"btn-medium", data: { turbo_method: :delete, turbo_confirm: "Are you sure ?" }  %>
@@ -29,8 +25,6 @@
   </div>
   <div>
     <div id="reservation">
-      <%# <h2>Réservation</h2> %>
-      <%# <%= render 'form_bookings' %>
       <%= link_to "Retour", :back, class: "btn-retour" %></div>
     </div>
   </div>

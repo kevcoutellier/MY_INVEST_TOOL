@@ -13,33 +13,20 @@
 @import "pages/index";
 
 
-
-// body{
-//   margin: 0;
-//   // background-color: #152D40;
-// }
-// html {
-//   text-align: center;
-// }
-
 body{
   // margin: 0;
-  background-color: #1A1A1A;
-  // color: white;
-
+  background-color: #fdf2f2;
+  color: white;
 }
+
 
 .corps{
   display: flex;
   flex-direction: column;
-  // width:90%;
   min-height: 100vh;
-  //  height: 80%;
   margin-left:auto;
   margin-right:auto;
-  background-color: #1A1A1A;
-  // background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);;
-  // margin-top: 10px;
+  background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);;
   box-shadow: 0 0 15px rgb(0, 0, 0);
   border-radius: 4px;
 }

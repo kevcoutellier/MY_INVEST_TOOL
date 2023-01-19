@@ -1,92 +1,36 @@
-<div class="container">
-  <div class="cards">
-    <%if params[:query] == nil%>
-    <div class="card card-pink">
-      <%= link_to "", new_real_estate_path, class: "add-bot"%>
-      <div class="title-custom">
-        <h3>GAINS REAL ESTATE</h3>
-      </div>
-        <h5>Total Gains : <%= RealEstate.all_gain %> $</h5>
-        <br>
-        <h5>Total Unity cost : <%= RealEstate.all_purchase_price %> $</h5>
-        <h5>Total Actual cost : <%= RealEstate.all_estimation %> $</h5>
-      <div class="add_card_custom">
-        <p><i class="fa-solid fa-plus"></i></p>
-      </div>
-    </div>
-    <% end %>
-    <% @real_estates.each do |real_estate| %>
-    <div class="card card-pink">
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <% if real_estate.photo.key  %>
-            <%= cl_image_tag real_estate.photo.key, class:"card__img", crop: :fill %>
-            <% end %>
-          </div>
-          <div class="swiper-slide" id="description">
-            <h2>Description</h2>
-            <p>Address: <%= real_estate.address %></p>
-            <p>Type: <%= real_estate.type_of %></p>
-            <p>Category: <%= real_estate.category %></p>
-            <p>Purchase price: <%= real_estate.purchase_price %>€</p>
-            <p>Floor space: <%= real_estate.floor_space %>m²</p>
-            <p>Date of purchase: <%= real_estate.date_of_purchase %></p>
-            <p>Estimated price: <%= real_estate.estimation %>$</p>
-            <p>Total gains: <%= real_estate.gain if real_estate.estimation %>$</p>
-            <br>
-          </div>
-          <div class="swiper-slide">
-            <div style="width: 100%; height: 400px;" class="fixed-top"
-              data-controller="map"
-              data-map-markers-value="<%= [@markers.find{|marker| marker[:real_estate] == real_estate.id}].to_json %>"
-              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-              <%  %>
-            </div>
-          </div>
+<%# INDEX INFOS %>
+<div class="container" id="crypto">
+    <div class="en-tete">
+      <h1>MY REAL ESTATE</h1>
+      <%= link_to "Add a property", new_real_estate_path, class: "" %>
+
+      <div class = "container" id = "crypto-index">
+        <div class = "container" id = "crypto-index">
+  <%# INDEX REAL ESTATE %>
+  <% @total = 0 %>
+
+      <% @real_estates.each do |real_estate| %>
+  <div class = "card-estate">
+              <h2><%= real_estate.description %></h2>
+              <p>Category: <%= real_estate.category %></p>
+              <p>Type: <%= real_estate.type_of %></p>
+              <p>Floor space: <%= real_estate.floor_space %>m²</p>
+              <p>Address: <%= real_estate.address %></p>
+              <p>Date of purchase: <%= real_estate.date_of_purchase %></p>
+              <p>Purchase price: <%= real_estate.purchase_price %>€</p>
+              <p>Estimated price: <%= real_estate.estimation %>$</p>
+              <p>Total gains: <%= real_estate.gain if real_estate.estimation %>$</p>
+        <div class = "crypto-link">
+          <%= link_to "edit", edit_real_estate_path(real_estate) %>
+          <%= link_to "delete", real_estate_path(real_estate), data: { method: :delete, confirm: "Are you sure ?" } %>
         </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-      </div>
-      <div class="bottom-card">
-        <p><strong><%= real_estate.description %></strong></p>
-        <p>
-        <%= link_to edit_real_estate_path(real_estate) do %>
-        <i class="fa-solid fa-pen-to-square"></i>
-        <% end %>
-        <p>
-          <%= link_to real_estate_path(real_estate), data: { method: :delete, confirm: "Are you sure ?" }  do %>
-          <i class="fa-solid fa-trash"></i>
-          <% end %>
-        </p>
-      </div>
     </div>
       <% end %>
-  </div>
-  <div id="mapbox"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+      </div>
 </div>
 
-
-<script>
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  // direction: 'vertical',
-  loop: true,
-
-  // pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-});
-</script>
+          <h3>Total Gains : <%= RealEstate.all_gain %> $</h3>
+          <h3>Total Unity cost : <%= RealEstate.all_purchase_price %> $</h3>
+          <h3>Total Actual cost : <%= RealEstate.all_estimation %> $</h3>
+  </div>
+</div>

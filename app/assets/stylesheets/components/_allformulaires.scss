@@ -18,8 +18,8 @@
 }
 
 .booking-real input{
- margin-bottom: 10px;
- .btn {
+margin-bottom: 10px;
+.btn {
 display: block;
 position: relative;
 margin-left: auto;
@@ -48,15 +48,15 @@ margin-right: auto;
 
 .liabilities input{
   margin-bottom: 10px;
-  .btn {
- display: block;
- position: relative;
- margin-left: auto;
- margin-right: auto;
- }
- }
+    .btn {
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  }
 
- .bank-form{
+.bank-form{
   opacity: 0.7;
   border-radius: 5px;
   width: 800px;
@@ -73,9 +73,9 @@ margin-right: auto;
   color: rgba(200,199,216,var(--tw-text-opacity));
   border-radius: 0.75rem;
   min-width: 280px !important
- }
+}
 
- .custom-form{
+.custom-form{
   opacity: 0.7;
   border-radius: 5px;
   width: 800px;
@@ -92,10 +92,10 @@ margin-right: auto;
   color: rgba(200,199,216,var(--tw-text-opacity));
   border-radius: 0.75rem;
   min-width: 280px !important
- }
+}
 
 
- .real-form{
+.real-form{
   opacity: 0.7;
   border-radius: 5px;
   width: 800px;
@@ -112,4 +112,4 @@ margin-right: auto;
   color: rgba(200,199,216,var(--tw-text-opacity));
   border-radius: 0.75rem;
   min-width: 280px !important
- }
+}
