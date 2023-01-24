@@ -5,47 +5,76 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
 
-.hit-the-floor {
+.neonText {
   color: #fff;
-  font-size: 10vw;
-  font-weight: bold;
-  font-family: Helvetica;
   text-shadow:
-    0 .005em 0 #ccc,
-    0 .01em 0 #c9c9c9,
-    0 .015em 0 #bbb,
-    0 .02em 0 #b9b9b9,
-    0 .025em 0 #aaa,
-    0 .03em .005em rgba(0,0,0,.1),
-    0 0 .025em rgba(0,0,0,.1),
-    0 .005em .015em rgba(0,0,0,.3),
-    0 .015em .025em rgba(0,0,0,.2),
-    0 .025em .05em rgba(0,0,0,.25),
-    0 .05em .05em rgba(0,0,0,.2),
-    0 .1em .1em rgba(0,0,0,.15);
-  display: fx;
-  justify-content: center;
-  align-items:center
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
+}
+
+h1 {
+  font-size: 4.2rem;
+  animation: flicker 1.5s infinite alternate;
+}
+
+/* Flickering animation */
+@keyframes flicker {
+
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #0fa,
+      0 0 80px #0fa,
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+
+  }
+
+  20%, 24%, 55% {
+      text-shadow: none;
+  }
+}
+
+
+/* Additional styling */
+
+h2 {
+ font-size: 1.8rem;
+}
+.container {
+  margin-top: 20vh;
 }
 
 body {
-  background-color: black;
-  min-height: 100vh;
-  justify-content: center;
-  align-items:flex-start
+  font-size: 18px;
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #010a01;
 }
 
-.text {
-  color: white;
+h1, h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
 }
   </style>
 </head>
 <body>
-<marquee behavior="alternate">
-  <div class="hit-the-floor">404
-  </div>
-  <img src="https://res.cloudinary.com/dezfv3vmn/image/upload/v1670506228/development/MI_xerwzg.png" width="600" height="600" alt="Myinvset " border="0">
-<div class="text"><h1>The page you were looking for doesn't exist!</h1></div>
-</marquee>
+  <div class="container">
+    <h1 class="neonText">
+          404
+    </h1>
+    <h2 class="neonText">Page Not Found</h2>
+
+ </div>
 </body>
 </html>

@@ -45,7 +45,7 @@
                 Sebastien SAUNIER
               </li>
               <li class="nav-item">
-                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link dropdown-item" %>
+                <%= button_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link dropdown-item" %>
               </li>
             <% else %>
               <li class="nav-item">

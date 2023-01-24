@@ -26,7 +26,7 @@
         <h5>Liabilities</h5>
         <h6><%= Liability.all_gain.round(2) %> $</h6>
         <p><% @liabilities.each do |liability| %></p>
-         <p> <%= liability.loan_name %> : <%= liability.amount %>  $</p>
+        <p> <%= liability.loan_name %> : <%= liability.amount %>  $</p>
           <% end %>
       </div>
       <div class="block">
