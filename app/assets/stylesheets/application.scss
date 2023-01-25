@@ -15,7 +15,6 @@
 
 body{
   // margin: 0;
-  background-color: #fdf2f2;
   color: white;
 }
 
@@ -23,6 +22,8 @@ body{
 .corps{
   display: flex;
   flex-direction: column;
+  column-count: auto;
+  column-gap: 15px;
   min-height: 100vh;
   margin-left:auto;
   margin-right:auto;

@@ -1,33 +1,27 @@
-      <%# INDEX INFOS %>
-      <div class="container" id="crypto">
-    <div class="en-tete">
-      <h1>MY LIABILITIES</h1>
-      <%= link_to "Add new liability", new_liability_path %>
-
-<div class = "container" id = "crypto-index">
-        <div class = "container" id = "crypto-index">
- <%# INDEX LIABILITIES %>
-<% @total = 0 %>
-
-
+<%# INDEX INFOS %>
+<div class="container" id="crypto">
+  <div class="en-tete">
+    <h1>MY LIABILITIES</h1>
+    <%= link_to "Add new liability", new_liability_path %>
+  </div>
+<%# INDEX LIABILITIES %>
+      <div class = "container" id = "crypto-index">
+  <% @total = 0 %>
       <% @liabilities.each do |liability| %>
-  <div class = "card-liabilities">
-        <h2><%= liability.loan_name %></h2>
-        <p><%= liability.amount %> $ - <%= liability.interest_rate %> %</p>
+        <div class = "card-liabilities">
+          <h2><%= liability.loan_name %></h2>
+          <p><%= liability.amount %> $ - <%= liability.interest_rate %> %</p>
           <p><%= liability.monthly_payment %>$/month</p>
-            <p>Start date : <%= liability.start_date %></p>
-              <p>Duration : <%= liability.duration %> month</p>
+          <p>Start date : <%= liability.start_date %></p>
+          <p>Duration : <%= liability.duration %> month</p>
         <div class = "crypto-link">
           <%= link_to "edit", edit_liability_path(liability) %>
           <%= link_to "Delete", liability_path(liability), data: { method: :delete, confirm: "Are you sure ?" } %>
-      </div>
-</div>
+        </div>
+    </div>
       <% end %>
-      </div>
-</div>
-          <%# <% @liabilities.each do |liability| %>
-          <%# <p><%= liability.loan_name %> : <%#<%= liability.amount  $</p> %>
-          <%# <% end %>
+    </div>
+  <div class="total">
     <h3>Total : <%= Liability.all_gain %> $</h3>
-</div>
+  </div>
 </div>

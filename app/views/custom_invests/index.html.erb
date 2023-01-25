@@ -2,36 +2,33 @@
 <div class="container" id="crypto">
   <div class="en-tete">
     <h1>MY CUSTOM INVEST</h1>
-  <%= link_to "Add custom invest", new_custom_invest_path, class: %>
-
-<div class = "container" id = "crypto-index">
-<div class = "container" id = "crypto-index">
-<%# INDEX CUSTOM INVEST %>
-<% @total = 0 %>
-
-      <% @custom_invests.each do |custom_invest| %>
-      <div class = "card-custom">
-            <h2>Description</h2>
-            <p><%= custom_invest.description %></p>
-            <h2>Détails</h2>
-              <p>Type : <%= custom_invest.category %></p>
-              <p>Quantity : <%= custom_invest.quantity %> gr</p>
-              <p>Unity_cost : <%= custom_invest.unity_cost %> $</p>
-              <p>Actual_cost : <%= custom_invest.actual_cost %> $</p>
-              <% if custom_invest.actual_cost && custom_invest.unity_cost %>
-              <p>Gain : <%= custom_invest.gain %> $</p>
-      <div class = "crypto-link">
-        <%= link_to "edit", edit_custom_invest_path(custom_invest) %>
-        <%= link_to "delete", custom_invest_path(custom_invest), data: { method: :delete, confirm: "Are you sure ?" } %>
-      </div>
-      <% end %>
-</div>
-    <% end %>
-    </div>
-</div>
-
+    <%= link_to "Add custom invest", new_custom_invest_path, class: %>
   </div>
-        <h3>Total Gains : <%= CustomInvest.all_gain %> $</h3>
-        <h3>Total Unity cost : <%= CustomInvest.all_unity_cost %> $</h3>
-        <h3>Total Actual cost : <%= CustomInvest.all_actual_cost %> $</h3>
+
+<%# INDEX CUSTOM INVEST %>
+<div class = "container" id = "crypto-index">
+  <% @total = 0 %>
+      <% @custom_invests.each do |custom_invest| %>
+        <div class = "card-custom">
+          <h2>Description</h2>
+          <p><%= custom_invest.description %></p>
+          <h2>Détails</h2>
+          <p>Type : <%= custom_invest.category %></p>
+          <p>Quantity : <%= custom_invest.quantity %> gr</p>
+          <p>Unity_cost : <%= custom_invest.unity_cost %> $</p>
+          <p>Actual_cost : <%= custom_invest.actual_cost %> $</p>
+          <% if custom_invest.actual_cost && custom_invest.unity_cost %>            <p>Gain : <%= custom_invest.gain %> $</p>
+            <div class = "crypto-link">
+              <%= link_to "edit", edit_custom_invest_path(custom_invest) %>
+              <%= link_to "delete", custom_invest_path(custom_invest), data: { method: :delete, confirm: "Are you sure ?" } %>
+            </div>
+  </div>
+      <% end %>
+      <% end %>
+    </div>
+  <div class="total">
+    <h3>Total Gains : <%= CustomInvest.all_gain %> $</h3>
+    <h3>Total Unity cost : <%= CustomInvest.all_unity_cost %> $</h3>
+    <h3>Total Actual cost : <%= CustomInvest.all_actual_cost %> $</h3>
+  </div>
 </div>

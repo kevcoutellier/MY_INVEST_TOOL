@@ -1,30 +1,26 @@
 <%# INDEX INFOS %>
 <div class="container" id="crypto">
   <div class="en-tete">
-      <h1>MY BANK ACCOUNTS</h1>
-      <%= link_to "Add bank account", new_bank_account_path %>
-      <br>
-
-<div class = "container" id = "crypto-index">
-<div class = "container" id = "crypto-index">
+    <h1>MY BANK ACCOUNTS</h1>
+    <%= link_to "Add bank account", new_bank_account_path %>
+  </div>
 <%# INDEX BANK ACCOUNT%>
-<% @total = 0 %>
-
+      <div class = "container" id = "crypto-index">
+  <% @total = 0 %>
       <% @bank_accounts.each do |bank_account| %>
-      <div class = "card-bank">
+        <div class = "card-bank">
           <h2><%= bank_account.bank %></h2>
           <p><%= bank_account.account_number %></p>
           <p>Balance : <%= bank_account.balance %> $</p>
           <p>Currency : <%= bank_account.currency %> </p>
-
         <div class = "crypto-link">
           <%= link_to "Edit", edit_bank_account_path(bank_account)  %>
           <%= link_to "Delete", bank_account_path(bank_account), data: { method: :delete, confirm: "Are you sure ?" }   %>
         </div>
-      </div>
+    </div>
       <% end %>
-</div>
-</div>
-</div>
-        <h3>Total : <%= BankAccount.all_bank %>$</h3>
+    </div>
+    <div class="total">
+      <h3>Total : <%= BankAccount.all_bank %>$</h3>
+    </div>
 </div>
